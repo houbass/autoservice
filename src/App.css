@@ -8,8 +8,6 @@
   color: white;
 }
 
-
-
 .App {
   display: flex;
   flex-direction: column;
@@ -19,10 +17,21 @@
 
 .serviceCard {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
   max-width: 1000px;
   width: 100%;
+}
+
+@media screen and (min-width: 500px){
+  .serviceCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+  }
 }
 
 .card {

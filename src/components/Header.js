@@ -21,7 +21,7 @@ export default function Header({ ToolPic }) {
                     height: "500px",
                     objectFit: "cover"
                 }}
-                ></img>
+                />
             </header>
         </div>
         </>

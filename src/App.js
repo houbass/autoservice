@@ -10,10 +10,13 @@ import KlimaPic from "./pictures/klima.png";
 import SkloPic from "./pictures/sklo.png";
 import PneuservisPic from "./pictures/pneuservis.png";
 import AutoservisPic from "./pictures/autoservis.png";
+import StkPic from "./pictures/stk.svg";
 
 //components
 import Header from './components/Header';
 import Main from './components/Main';
+import Map from './components/Map';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -26,7 +29,10 @@ function App() {
       SkloPic={SkloPic} 
       PneuservisPic={PneuservisPic} 
       AutoservisPic={AutoservisPic} 
+      StkPic={StkPic}
       />
+      <Map />
+      <Footer />
     </div>
   );
 }

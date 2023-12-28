@@ -7,7 +7,7 @@ import ServiceAnim from "../animations/service.json";
 
 
 
-export default function Main({ DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic }) {
+export default function Main({ DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic }) {
 
     const row1 = [
         {
@@ -41,7 +41,7 @@ export default function Main({ DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, 
         {
             name: "Příprava na STK",
             text: "Připravíme vaš vůz na STK.....",
-            pic: AutoservisPic
+            pic: StkPic
         }
     ];
 
@@ -54,18 +54,27 @@ export default function Main({ DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, 
                 alignItems: "center",
                 width: "100%",
                 //background: "rgb(100, 108, 120)",
-                paddingTop: "50px"
+                paddingTop: "50px",
+                paddingBottom: "50px"
             }}>
+
+                <Lottie 
+                animationData={ServiceAnim} 
+                style={{
+                    width: "400px"
+                }}
+                />
 
 
                 <div 
                 className="serviceCard"
-                style={{paddingTop: "20px"}}
+                style={{paddingTop: "50px"}}
                 >
                     {row1.map(e => {
 
                         return(
-                            <div
+                            <div 
+                            key={e.name}
                             className="card">
                                 <div className="cardTopic">
                                     <img 
@@ -83,12 +92,13 @@ export default function Main({ DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, 
 
                 <div 
                 className="serviceCard"
-                style={{paddingTop: "20px"}}
+                style={{paddingTop: "50px"}}
                 >
                     {row2.map(e => {
 
                         return(
-                            <div
+                            <div 
+                            key={e.name}
                             className="card">
                                 <div className="cardTopic">
                                     <img 
