@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import react from 'react';
+
+//style
 import './App.css';
+
+//pictures
+import ToolPic from "./pictures/tool.jpg";
+import DiagnosticPic from "./pictures/diagnostick.png";
+import KlimaPic from "./pictures/klima.png";
+import SkloPic from "./pictures/sklo.png";
+import PneuservisPic from "./pictures/pneuservis.png";
+import AutoservisPic from "./pictures/autoservis.png";
+
+//components
+import Header from './components/Header';
+import Main from './components/Main';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header ToolPic={ToolPic}/>
+      <Main 
+      DiagnosticPic={DiagnosticPic} 
+      KlimaPic={KlimaPic}
+      SkloPic={SkloPic} 
+      PneuservisPic={PneuservisPic} 
+      AutoservisPic={AutoservisPic} 
+      />
     </div>
   );
 }
