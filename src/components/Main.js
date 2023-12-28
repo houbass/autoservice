@@ -6,24 +6,25 @@ import Lottie from "lottie-react";
 import ServiceAnim from "../animations/service.json";
 
 
+export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic }) {
 
-export default function Main({ DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic }) {
-
+    
     const row1 = [
-        {
-            name: "Diagnostika",
-            text: "Diagnostika Vašeho vozu profesionálním dignostickým přístrojem, čtení chybových kódů, regenerace DPF, reset servisních intervalů",
-            pic: DiagnosticPic
-        }, 
         {
             name: "Autoservis",
             text: "Kompletní autoservis, výměna olejů a filtrů, brzd, tlumičů, rozvodových řemenů a řetězů, spojek, opravy motorů",
             pic: AutoservisPic
-        },
+
+        }, 
         {
             name: "Pneuservis",
             text: "Kompletní pneuservis, přezutí, vyvážení, opravy defektů pneumatik",
             pic: PneuservisPic
+        },
+        {
+            name: "Klimatizace",
+            text: "Servis a doplnění klimatizace",
+            pic: KlimaPic
         }
     ];
 
@@ -34,9 +35,9 @@ export default function Main({ DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, 
             pic: SkloPic
         }, 
         {
-            name: "Klimatizace",
-            text: "Servis a doplnění klimatizace",
-            pic: KlimaPic
+            name: "Diagnostika",
+            text: "Diagnostika Vašeho vozu profesionálním dignostickým přístrojem, čtení chybových kódů, regenerace DPF, reset servisních intervalů",
+            pic: DiagnosticPic
         },
         {
             name: "Příprava na STK",
@@ -48,6 +49,8 @@ export default function Main({ DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, 
     return(
         <>
             <div 
+            ref={main}
+            id="main"
             style={{
                 display: "flex",
                 flexDirection: "column",

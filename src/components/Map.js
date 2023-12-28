@@ -1,10 +1,11 @@
 
 
-export default function Map() {
+export default function Map({ kontakt }) {
 
     return(
         <>
             <div 
+            ref={kontakt}
             style={{
                 display: "flex",
                 flexDirection: "column",
@@ -12,8 +13,8 @@ export default function Map() {
                 width: "100%",
                 background: "rgb(245, 245, 245)",
                 color: "rgb(40, 44, 52)",
-                paddingTop: "50px",
-                paddingBottom: "50px"
+                paddingTop: "80px",
+                paddingBottom: "80px"
             }}>
                 <div 
                 className="serviceCard" 

@@ -11,7 +11,8 @@ export default function Header({ ToolPic }) {
         style={{
             //background: "orange",
             //maxWidth: "1000px",
-            width: "100%"
+            width: "100%",
+            paddingTop: "50px"
         }}>
             <header>
                 <img 

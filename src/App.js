@@ -1,4 +1,4 @@
-import react from 'react';
+import react, { useRef } from 'react';
 
 //style
 import './App.css';
@@ -13,6 +13,7 @@ import AutoservisPic from "./pictures/autoservis.png";
 import StkPic from "./pictures/stk.svg";
 
 //components
+import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Main from './components/Main';
 import Map from './components/Map';
@@ -20,10 +21,19 @@ import Footer from './components/Footer';
 
 
 function App() {
+
+  const main = useRef();
+  const kontakt = useRef();
+  
   return (
     <div className="App">
+      <Navbar 
+      main={main}
+      kontakt={kontakt}
+      />
       <Header ToolPic={ToolPic}/>
       <Main 
+      main={main}
       DiagnosticPic={DiagnosticPic} 
       KlimaPic={KlimaPic}
       SkloPic={SkloPic} 
@@ -31,7 +41,7 @@ function App() {
       AutoservisPic={AutoservisPic} 
       StkPic={StkPic}
       />
-      <Map />
+      <Map kontakt={kontakt}/>
       <Footer />
     </div>
   );
