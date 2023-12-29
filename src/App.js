@@ -17,6 +17,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Main from './components/Main';
 import Map from './components/Map';
+import Galery from './components/Galery';
 import Footer from './components/Footer';
 
 
@@ -24,12 +25,14 @@ function App() {
 
   const main = useRef();
   const kontakt = useRef();
+  const galery = useRef();
   
   return (
     <div className="App">
       <Navbar 
       main={main}
-      kontakt={kontakt}
+      kontakt={kontakt} 
+      galery={galery}
       />
       <Header ToolPic={ToolPic}/>
       <Main 
@@ -42,6 +45,7 @@ function App() {
       StkPic={StkPic}
       />
       <Map kontakt={kontakt}/>
+      <Galery galery={galery}/>
       <Footer />
     </div>
   );

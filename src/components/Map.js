@@ -5,6 +5,7 @@ export default function Map({ kontakt }) {
     return(
         <>
             <div 
+            className="scrollMarginTop"
             ref={kontakt}
             style={{
                 display: "flex",

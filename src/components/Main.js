@@ -50,7 +50,7 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
         <>
             <div 
             ref={main}
-            id="main"
+            className="scrollMarginTop"
             style={{
                 display: "flex",
                 flexDirection: "column",

@@ -53,3 +53,7 @@
   height: 100px;
   border-radius: 50%;
 }
+
+.scrollMarginTop {
+  scroll-margin-top: 50px;
+}

@@ -12,7 +12,8 @@ export default function Footer() {
                 alignItems: "center",
                 width: "100%",
                 height: "400px",
-                //background: "rgb(100, 108, 120)",
+                background: "rgb(245, 245, 245)",
+                color: "rgb(40, 44, 52)",
                 paddingTop: "50px",
                 paddingBottom: "50px"
             }}>

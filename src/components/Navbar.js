@@ -1,5 +1,5 @@
 
-export default function Navbar({ main, kontakt }) {
+export default function Navbar({ main, kontakt, galery }) {
 
     return(
         <>
@@ -16,6 +16,7 @@ export default function Navbar({ main, kontakt }) {
         }}>
             <button onClick={() => main.current.scrollIntoView()}>služby</button>
             <button onClick={() => kontakt.current.scrollIntoView()}>kontakt</button>
+            <button onClick={() => galery.current.scrollIntoView()}>galerie</button>
 
         </div>
         </>
