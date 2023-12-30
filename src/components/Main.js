@@ -56,21 +56,20 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                 flexDirection: "column",
                 alignItems: "center",
                 width: "100%",
-                //background: "rgb(100, 108, 120)",
                 paddingTop: "50px",
-                paddingBottom: "50px"
+                paddingBottom: "50px",
             }}>
 
                 <Lottie 
+                className="mainLottie"
                 animationData={ServiceAnim} 
-                style={{
-                    width: "400px"
-                }}
                 />
-                
+
                 <div 
                 className="serviceCard"
-                style={{paddingTop: "50px"}}
+                style={{
+                    paddingTop: "50px",
+                }}
                 >
                     {row1.map(e => {
 
@@ -84,7 +83,6 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                                     width={"50%"}
                                     />
                                 </div>
-        
                                 <h2>{e.name}</h2>
                                 <p>{e.text}</p>
                             </div>
@@ -115,11 +113,7 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                         )
                     })}
                 </div>
-
-
             </div>
-
-        
         </>
     )
 }

@@ -2,21 +2,26 @@ import { useEffect, useRef, useState } from "react"
 
 import Lottie from "lottie-react";
 import geers from "../animations/geers.json"
-import geers2 from "../animations/geers2.json"
 
 export default function Navbar({ header, main, kontakt, galery }) {
 
-    const [selections, setSelections] = useState(["0%", "0%", "0%"]);
     const geersRef = useRef();
+    const [selections, setSelections] = useState(["0%", "0%", "0%"]);
+    const [goUpVisibility, setGoUpVisibility] = useState("goUpHidden")
+    const [firstTImeHandler, setFirstTimeHandler] = useState(true);
 
+    //go up button visibility
+    function goUpVisibilityFun() {
+        if(window.scrollY > 100) {
+            setGoUpVisibility("goUpShow");
+            setFirstTimeHandler(false);
+        } else if(window.scrollY < 100 && firstTImeHandler === false) {
+            setGoUpVisibility("goUpHide");
+        }
+    }
 
-
+    //scrolling function
     function scrolling() {
-        console.log("SLUŽBY Y: " + main.current.getBoundingClientRect().y)
-        console.log("KONTAKT Y: " + kontakt.current.getBoundingClientRect().y)
-        console.log("WINDOW Y: " + window.scrollY)
-        console.log("WINDOW HEIGHT: " + (window.innerHeight / 2))
-
         const screen = window.innerHeight / 2;
 
         if(
@@ -31,12 +36,13 @@ export default function Navbar({ header, main, kontakt, galery }) {
             setSelections(["0%", "100%", "0%"]);
         } else if(
             galery.current.getBoundingClientRect().y < screen 
-            //galery.current.getBoundingClientRect().y > screen
         ) {
             setSelections(["0%", "0%", "100%"]);
             }else{
             setSelections(["0%", "0%", "0%"]);
         }
+
+        goUpVisibilityFun()
 
         geersRef.current.play();
         const timeout = setTimeout(() => {
@@ -47,19 +53,21 @@ export default function Navbar({ header, main, kontakt, galery }) {
             clearTimeout(timeout)
         }
     }
-
     
 
     //SCROLLING EVENT LISTENER
     useEffect(() => {
-        geersRef.current.stop();
-        scrolling();
         window.addEventListener("scroll", scrolling);
 
         return () => {
             window.removeEventListener("scroll", scrolling);
         }
-    }, [])
+    });
+
+    useEffect(() => {
+        geersRef.current.stop();
+        scrolling();
+    }, []);
     
     return(
         <>
@@ -70,7 +78,7 @@ export default function Navbar({ header, main, kontakt, galery }) {
             flexDirection: "row",
             alignItems: "center",
             justifyContent: "space-between",
-            background: "rgba(0,0,0,0.8)",
+            background: "rgba(0,0,0,1)",
             width: "100%",
             height: "60px",
             zIndex: "1",
@@ -78,7 +86,6 @@ export default function Navbar({ header, main, kontakt, galery }) {
 
             <Lottie 
             onClick={() => {
-                //setSelections(["0%", "0%", "0%"]);
                 header.current.scrollIntoView();
             }} 
             style={{
@@ -89,8 +96,6 @@ export default function Navbar({ header, main, kontakt, galery }) {
             animationData={geers}
             loop={true}
             />
-
-
 
             <div 
             style={{
@@ -103,8 +108,6 @@ export default function Navbar({ header, main, kontakt, galery }) {
                     <button 
                     className="navBtn"
                     onClick={() => {
-                        //geersRef.current.playSegments(2);
-                        //setSelections(["100%", "0%", "0%"]);
                         main.current.scrollIntoView();
                     }}
                     >služby</button>
@@ -124,7 +127,6 @@ export default function Navbar({ header, main, kontakt, galery }) {
                     <button 
                     className="navBtn"
                     onClick={() => {
-                        //setSelections(["0%", "100%", "0%"]);
                         kontakt.current.scrollIntoView();
                     }}
                     >kontakt</button>
@@ -144,7 +146,6 @@ export default function Navbar({ header, main, kontakt, galery }) {
                     <button 
                     className="navBtn" 
                     onClick={() => {
-                        //setSelections(["0%", "0%", "100%"]);
                         galery.current.scrollIntoView();
                     }}
                     >galerie</button>
@@ -163,24 +164,31 @@ export default function Navbar({ header, main, kontakt, galery }) {
             </div>
         </div>
         <div 
+        onClick={() => {
+            header.current.scrollIntoView();
+        }} 
+        className={goUpVisibility}
         style={{
             position: "fixed",
-            bottom: "10px",
             zIndex: "10",
-            right: "10px"
+            right: "10px",
+            background: "black",
+            width:"30px",
+            height: "30px",
+            padding: "20px",
+            borderRadius: "50%", 
+            cursor: "pointer"
         }}>
-            <button
-            onClick={() => {
-                //setSelections(["0%", "0%", "0%"]);
-                header.current.scrollIntoView();
-            }}
-            style={{
-                padding: "15px",
-                fontSize: "20px",
-                fontWeight: "bold",
-                cursor: "pointer",
-                opacity: 1
-            }}>˄</button>
+            <svg 
+            viewBox="0 0 551.13 551.13" 
+            xmlns="http://www.w3.org/2000/svg" 
+            id="svg-1d98"
+            fill="orange" 
+            >
+                <g stroke="orange">
+                <path strokeWidth="40" d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path>
+                </g>
+            </svg>
         </div>
         </>
     )

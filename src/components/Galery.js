@@ -11,7 +11,7 @@ export default function Galery({ galery }) {
             height:"800px"
         }}
         >
-            <h1>galery</h1>
+            <h1>galerie</h1>
         </div>
         </>
     )
