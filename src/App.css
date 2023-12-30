@@ -20,6 +20,10 @@ text {
   text-align: center;
 }
 
+.introHeight {
+  height: 500px;
+}
+
 .serviceCard {
   display: flex;
   flex-direction: column;
@@ -50,6 +54,10 @@ text {
 
 
 @media screen and (min-width: 550px){
+
+  .introHeight {
+    height: 800px;
+  }
 
   .map {
     border-color: transparent;

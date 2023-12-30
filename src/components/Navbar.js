@@ -3,12 +3,39 @@ import { useEffect, useRef, useState } from "react"
 import Lottie from "lottie-react";
 import geers from "../animations/geers.json"
 
+//components
+import MobileMenu from "./MobileMenu";
+
 export default function Navbar({ header, main, kontakt, galery, about }) {
 
     const geersRef = useRef();
     const [selections, setSelections] = useState(["0%", "0%", "0%", "0%"]);
+
+    const menu = [
+        {
+            name: "služby",
+            ref: main.current
+        }, 
+        {
+            name: "kontakt",
+            ref: kontakt.current
+        },
+        {
+            name: "galerie",
+            ref: galery.current
+        },
+        {
+            name: "o mně",
+            ref: about.current
+        },
+    ]
+
+
     const [goUpVisibility, setGoUpVisibility] = useState("goUpHidden")
     const [firstTImeHandler, setFirstTimeHandler] = useState(true);
+    const [mobileMenuVisibility, setMobileMenuVisibility] = useState("visible");
+
+    const visibleChange = {"visible" : "hidden", "hidden" : "visible"}
 
     //go up button visibility
     function goUpVisibilityFun() {
@@ -73,6 +100,13 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
         geersRef.current.stop();
         scrolling();
     }, []);
+
+    useEffect(() => {
+        if(window.innerWidth < 550) {
+            setMobileMenuVisibility("hidden")
+        }
+        console.log(window.innerWidth)
+    }, [])
     
     return(
         <>
@@ -102,90 +136,13 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
             loop={true}
             />
 
-            <div 
-            style={{
-                paddingRight: "20px",
-                display: "flex",
-                flexDirection: "row",
-                gap: "20px"
-            }}>
-                <div>
-                    <button 
-                    className="navBtn"
-                    onClick={() => {
-                        main.current.scrollIntoView();
-                    }}
-                    >služby</button>
-                    <div
-                    style={{
-                        background: "white",
-                        width: selections[0],
-                        height: "3px",
-                        marginTop: "-3px",
-                        transition: "1s",
-                        opacity: selections[0][0]
-                    }}>
-                    </div>
-                </div>
+            <MobileMenu 
+            menu={menu} 
+            selections={selections}
+            
+            />
 
-                <div>
-                    <button 
-                    className="navBtn"
-                    onClick={() => {
-                        kontakt.current.scrollIntoView();
-                    }}
-                    >kontakt</button>
-                    <div
-                    style={{
-                        background: "white",
-                        width: selections[1],
-                        height: "3px",
-                        marginTop: "-3px",
-                        transition: "1s",
-                        opacity: selections[1][0]
-                    }}>
-                    </div>
-                </div>
 
-                <div>
-                    <button 
-                    className="navBtn" 
-                    onClick={() => {
-                        galery.current.scrollIntoView();
-                    }}
-                    >galerie</button>
-                    <div
-                    style={{
-                        background: "white",
-                        width: selections[2],
-                        height: "3px",
-                        marginTop: "-3px",
-                        transition: "1s",
-                        opacity: selections[2][0]
-                    }}>
-                    </div>
-                </div>
-
-                <div>
-                    <button 
-                    className="navBtn" 
-                    onClick={() => {
-                        about.current.scrollIntoView();
-                    }}
-                    >o mně</button>
-                    <div
-                    style={{
-                        background: "white",
-                        width: selections[3],
-                        height: "3px",
-                        marginTop: "-3px",
-                        transition: "1s",
-                        opacity: selections[3][0]
-                    }}>
-                    </div>
-                </div>
-
-            </div>
         </div>
         <div 
         onClick={() => {
