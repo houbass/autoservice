@@ -67,8 +67,7 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                     width: "400px"
                 }}
                 />
-
-
+                
                 <div 
                 className="serviceCard"
                 style={{paddingTop: "50px"}}

@@ -20,7 +20,7 @@ export default function Header({ header, ToolPic }) {
                 src={ToolPic}
                 style={{
                     width: "100%",
-                    height: "400px",
+                    height: "800px",
                     objectFit: "cover"
                 }}
                 />

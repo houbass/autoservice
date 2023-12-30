@@ -6,7 +6,10 @@ export default function Galery({ galery }) {
         <>
         <div 
         className="scrollMarginTop"
-        ref={galery}
+        ref={galery} 
+        style={{
+            height:"800px"
+        }}
         >
             <h1>galery</h1>
         </div>
