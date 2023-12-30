@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from "react"
 import Lottie from "lottie-react";
 import geers from "../animations/geers.json"
 
-export default function Navbar({ header, main, kontakt, galery }) {
+export default function Navbar({ header, main, kontakt, galery, about }) {
 
     const geersRef = useRef();
-    const [selections, setSelections] = useState(["0%", "0%", "0%"]);
+    const [selections, setSelections] = useState(["0%", "0%", "0%", "0%"]);
     const [goUpVisibility, setGoUpVisibility] = useState("goUpHidden")
     const [firstTImeHandler, setFirstTimeHandler] = useState(true);
 
@@ -28,18 +28,23 @@ export default function Navbar({ header, main, kontakt, galery }) {
         main.current.getBoundingClientRect().y < screen && 
         kontakt.current.getBoundingClientRect().y > screen
         ) {
-            setSelections(["100%", "0%", "0%"]);
+            setSelections(["100%", "0%", "0%", "0%"]);
         } else if(
         kontakt.current.getBoundingClientRect().y < screen && 
         galery.current.getBoundingClientRect().y > screen
         ) {
-            setSelections(["0%", "100%", "0%"]);
+            setSelections(["0%", "100%", "0%", "0%"]);
         } else if(
-            galery.current.getBoundingClientRect().y < screen 
+            galery.current.getBoundingClientRect().y < screen &&
+            about.current.getBoundingClientRect().y > screen
         ) {
-            setSelections(["0%", "0%", "100%"]);
-            }else{
-            setSelections(["0%", "0%", "0%"]);
+            setSelections(["0%", "0%", "100%", "0%"]);
+        } else if(
+            about.current.getBoundingClientRect().y < screen
+        ) {
+            setSelections(["0%", "0%", "0%", "100%"]);
+        }else{
+            setSelections(["0%", "0%", "0%", "0%"]);
         }
 
         goUpVisibilityFun()
@@ -157,6 +162,25 @@ export default function Navbar({ header, main, kontakt, galery }) {
                         marginTop: "-3px",
                         transition: "1s",
                         opacity: selections[2][0]
+                    }}>
+                    </div>
+                </div>
+
+                <div>
+                    <button 
+                    className="navBtn" 
+                    onClick={() => {
+                        about.current.scrollIntoView();
+                    }}
+                    >o mně</button>
+                    <div
+                    style={{
+                        background: "white",
+                        width: selections[3],
+                        height: "3px",
+                        marginTop: "-3px",
+                        transition: "1s",
+                        opacity: selections[3][0]
                     }}>
                     </div>
                 </div>

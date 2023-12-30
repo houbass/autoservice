@@ -11,14 +11,13 @@ export default function Footer() {
                 flexDirection: "column",
                 alignItems: "center",
                 width: "100%",
-                height: "200px",
-                background: "rgb(245, 245, 245)",
-                color: "rgb(40, 44, 52)",
+                height: "150px",
+                //background: "rgb(245, 245, 245)",
+                color: "rgb(245, 245, 245)",
                 paddingTop: "50px",
-                paddingBottom: "50px"
+                //paddingBottom: "50px"
             }}>
                 <p>footer</p>
-                
             </div>
         </>
     )

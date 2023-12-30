@@ -26,7 +26,7 @@ export default function Header({ header, ToolPic, introAnimClass }) {
         style={{
             position: "absolute",
             top: "350px",
-            background: "rgba(0,0,0,0.9)",
+            background: "rgba(40, 44, 52, 0.9)",
             width: "100%",
             padding: "50px 0px",
             display: "flex",
