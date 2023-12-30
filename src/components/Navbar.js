@@ -62,10 +62,10 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
 
     //SCROLLING EVENT LISTENER
     useEffect(() => {
-        window.addEventListener("scroll", scrolling);
+        window.addEventListener("scroll", scrolling, { passive: true });
 
         return () => {
-            window.removeEventListener("scroll", scrolling);
+            window.removeEventListener("scroll", scrolling, { passive: true });
         }
     });
 
