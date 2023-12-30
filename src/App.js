@@ -23,6 +23,7 @@ import Footer from './components/Footer';
 
 function App() {
 
+  const header = useRef();
   const main = useRef();
   const kontakt = useRef();
   const galery = useRef();
@@ -30,11 +31,12 @@ function App() {
   return (
     <div className="App">
       <Navbar 
+      header={header}
       main={main}
       kontakt={kontakt} 
       galery={galery}
       />
-      <Header ToolPic={ToolPic}/>
+      <Header header={header} ToolPic={ToolPic}/>
       <Main 
       main={main}
       DiagnosticPic={DiagnosticPic} 

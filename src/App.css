@@ -55,5 +55,17 @@
 }
 
 .scrollMarginTop {
-  scroll-margin-top: 50px;
+  scroll-margin-top: 60px;
+}
+
+.navBtn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+
+  text-underline-offset: 5px; 
 }

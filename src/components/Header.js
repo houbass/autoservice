@@ -1,25 +1,26 @@
 
 
 
-export default function Header({ ToolPic }) {
+export default function Header({ header, ToolPic }) {
 
     
 
     return(
         <>
         <div 
+        ref={header}
         style={{
             //background: "orange",
             //maxWidth: "1000px",
             width: "100%",
-            paddingTop: "50px"
+            paddingTop: "60px"
         }}>
             <header>
                 <img 
                 src={ToolPic}
                 style={{
                     width: "100%",
-                    height: "500px",
+                    height: "400px",
                     objectFit: "cover"
                 }}
                 />
