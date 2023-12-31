@@ -10,7 +10,11 @@ import Menu from "./Menu";
 export default function Navbar({ header, main, kontakt, galery, about }) {
 
     const geersRef = useRef();
+
     const [selections, setSelections] = useState(["0%", "0%", "0%", "0%"]);
+    const [goUpVisibility, setGoUpVisibility] = useState("goUpHidden")
+    const [firstTImeHandler, setFirstTimeHandler] = useState(true);
+    const [prevScroll, setPrevScroll] = useState(0);
 
     const menu = [
         {
@@ -32,12 +36,6 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
     ]
 
 
-    const [goUpVisibility, setGoUpVisibility] = useState("goUpHidden")
-    const [firstTImeHandler, setFirstTimeHandler] = useState(true);
-    const [mobileMenuVisibility, setMobileMenuVisibility] = useState("visible");
-
-    const visibleChange = {"visible" : "hidden", "hidden" : "visible"}
-
     //go up button visibility
     function goUpVisibilityFun() {
         if(window.scrollY > 100) {
@@ -48,9 +46,38 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
         }
     }
 
+    //checking for scroll direction
+    function scrollDirection() {
+
+        
+
+        
+        const scrollTop = window.scrollY;
+
+        console.log("---------")
+        //console.log(scrollTop);
+        //console.log(prevScroll);
+
+
+        if(prevScroll <= scrollTop) {
+            console.log("going down");
+            geersRef.current.setDirection(1);
+        } else{
+            console.log("going UP");
+            geersRef.current.setDirection(-1);
+        }
+
+
+
+        setPrevScroll(scrollTop);
+    }
+
     //scrolling function
     function scrolling() {
         const screen = window.innerHeight / 2;
+
+        //check scroll direction
+        scrollDirection()
 
         if(
         main.current.getBoundingClientRect().y < screen && 
@@ -101,13 +128,6 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
         geersRef.current.stop();
         scrolling();
     }, []);
-
-    useEffect(() => {
-        if(window.innerWidth < 550) {
-            setMobileMenuVisibility("hidden")
-        }
-        console.log(window.innerWidth)
-    }, [])
     
     return(
         <>
