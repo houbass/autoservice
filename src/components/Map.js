@@ -14,15 +14,18 @@ export default function Map({ kontakt }) {
                 width: "100%",
                 background: "rgb(245, 245, 245)",
                 color: "rgb(40, 44, 52)",
-                paddingTop: "200px",
+                paddingTop: "60px",
                 paddingBottom: "200px",
             }}>
+
+            <h1 style={{paddingBottom: "100px"}}>Kde nás najdete:</h1>
                 <div 
                 className="serviceCard" 
                 style={{
                     alignItems: "center",
                 }}
                 >
+
                     <div 
                     style={{
                         textAlign: "left",

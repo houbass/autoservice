@@ -16,31 +16,23 @@ export default function Header({ header, ToolPic, introAnimClass }) {
                 src={ToolPic}
                 style={{
                     width: "100%",
-                    //height: "800px",
                     objectFit: "cover"
                 }}
                 />
                 
-
                 <div 
                 className="introHeight"
                 style={{
                     position: "absolute",
                     top: "60px",
-                    //background: "orange",
                     width: "100%",
-                    //height: "800px",
-                    //padding: "50px 0px",
                     display: "flex",
                     flexDirection: "column",
                     alignItems:"center",
                     justifyContent: "center"
-
                 }}>
                     <div 
                     style={{
-                        //position: "absolute",
-                        //top: 0,
                         background: "rgba(40, 44, 52, 0.9)",
                         width: "100%",
                         padding: "50px 0px",
@@ -72,8 +64,6 @@ export default function Header({ header, ToolPic, introAnimClass }) {
                         </div>
                     </div>
                 </div>
-
-
             </header>
         </div>
 

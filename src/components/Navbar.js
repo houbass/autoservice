@@ -5,6 +5,7 @@ import geers from "../animations/geers.json"
 
 //components
 import MobileMenu from "./MobileMenu";
+import Menu from "./Menu";
 
 export default function Navbar({ header, main, kontakt, galery, about }) {
 
@@ -139,7 +140,11 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
             <MobileMenu 
             menu={menu} 
             selections={selections}
-            
+            />
+
+<Menu 
+            menu={menu} 
+            selections={selections}
             />
 
 

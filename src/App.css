@@ -20,6 +20,67 @@ text {
   text-align: center;
 }
 
+.menu {
+  visibility: hidden;
+}
+
+.mobileBtn {
+  visibility: visible;
+}
+
+@media screen and (min-width: 550px){
+  .menu {
+    visibility: visible;
+  }
+
+  .mobileBtn {
+    visibility: hidden;
+  }
+}
+
+.mobileMenuHidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.mobileMenuShow {
+  animation: mobileMenuShowAnim 0.5s forwards;
+}
+
+@keyframes mobileMenuShowAnim {
+  0%{
+    visibility: visible;
+    opacity: 0;
+  }
+  1%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.mobileMenuHide {
+  animation: mobileMenuHideAnim 0.5s forwards;
+}
+
+@keyframes mobileMenuHideAnim {
+  0%{
+    opacity: 1;
+    visibility: visible;
+  }
+  90%{
+    opacity: 0;
+    visibility: visible;
+  }
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
 .introHeight {
   height: 500px;
 }
@@ -204,8 +265,8 @@ text {
 
 .introUnderline {
   width: 0%;
-  height: 8px;
-  border-radius: 4px;
+  height: 5px;
+  border-radius: 2.5px;
   background: rgb(245, 245, 245);
   margin-top: -7px;
   animation: introUnderlineAnim 1s forwards 2s;
@@ -220,5 +281,17 @@ text {
   100% {
     width: 100%;
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 500px){
+  .introUnderline {
+    width: 0%;
+    height: 8px;
+    border-radius: 4px;
+    background: rgb(245, 245, 245);
+    margin-top: -7px;
+    animation: introUnderlineAnim 1s forwards 2s;
+    opacity: 0;
   }
 }

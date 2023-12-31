@@ -3,12 +3,10 @@
 import Lottie from "lottie-react";
 
 //LOTTIE DATA
-import ServiceAnim from "../animations/service.json";
-
+import ServiceAnim from "../animations/service3.json";
 
 export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic }) {
 
-    
     const row1 = [
         {
             name: "Autoservis",
@@ -65,6 +63,12 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                 animationData={ServiceAnim} 
                 />
 
+                <br/>
+                <h2 style={{
+                    padding: "0px 10px"
+                }}>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</h2>
+                <br/>
+
                 <div 
                 className="serviceCard"
                 style={{
@@ -92,7 +96,10 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
 
                 <div 
                 className="serviceCard"
-                style={{paddingTop: "50px"}}
+                style={{
+                    paddingTop: "50px",
+                    paddingBottom: "50px"
+                }}
                 >
                     {row2.map(e => {
 
@@ -113,6 +120,8 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                         )
                     })}
                 </div>
+
+
             </div>
         </>
     )
