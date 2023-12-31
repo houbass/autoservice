@@ -49,15 +49,7 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
     //checking for scroll direction
     function scrollDirection() {
 
-        
-
-        
         const scrollTop = window.scrollY;
-
-        console.log("---------")
-        //console.log(scrollTop);
-        //console.log(prevScroll);
-
 
         if(prevScroll <= scrollTop) {
             console.log("going down");
@@ -66,8 +58,6 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
             console.log("going UP");
             geersRef.current.setDirection(-1);
         }
-
-
 
         setPrevScroll(scrollTop);
     }
@@ -151,6 +141,7 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
             style={{
                 cursor: "pointer",
                 paddingLeft: "20px",
+                width: "40px"
             }}
             lottieRef={geersRef}
             animationData={geers}
@@ -162,7 +153,7 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
             selections={selections}
             />
 
-<Menu 
+            <Menu 
             menu={menu} 
             selections={selections}
             />
