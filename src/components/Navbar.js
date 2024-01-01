@@ -52,10 +52,8 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
         const scrollTop = window.scrollY;
 
         if(prevScroll <= scrollTop) {
-            console.log("going down");
             geersRef.current.setDirection(1);
         } else{
-            console.log("going UP");
             geersRef.current.setDirection(-1);
         }
 

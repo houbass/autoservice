@@ -4,7 +4,7 @@ import react, { useEffect, useRef, useState } from 'react';
 import './App.css';
 
 //pictures
-import ToolPic from "./pictures/tool.jpg";
+import ToolPic from "./pictures/tool.webp";
 import DiagnosticPic from "./pictures/diagnostick.png";
 import KlimaPic from "./pictures/klima.png";
 import SkloPic from "./pictures/sklo.png";

@@ -3,7 +3,7 @@
 import Lottie from "lottie-react";
 
 //LOTTIE DATA
-import ServiceAnim from "../animations/service3.json";
+import ServiceAnim from "../animations/service.json";
 
 export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic }) {
 
@@ -12,7 +12,6 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
             name: "Autoservis",
             text: "Kompletní autoservis, výměna olejů a filtrů, brzd, tlumičů, rozvodových řemenů a řetězů, spojek, opravy motorů",
             pic: AutoservisPic
-
         }, 
         {
             name: "Pneuservis",
@@ -84,6 +83,7 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                                 <div className="cardTopic">
                                     <img 
                                     src={e.pic} 
+                                    alt={e.name}
                                     width={"50%"}
                                     />
                                 </div>
@@ -110,6 +110,7 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                                 <div className="cardTopic">
                                     <img 
                                     src={e.pic} 
+                                    alt={e.name}
                                     width={"50%"}
                                     />
                                 </div>

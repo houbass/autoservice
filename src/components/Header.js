@@ -13,7 +13,8 @@ export default function Header({ header, ToolPic, introAnimClass }) {
             <header>
                 <img 
                 className="introHeight"
-                src={ToolPic}
+                src={ToolPic} 
+                alt="tools"
                 style={{
                     width: "100%",
                     objectFit: "cover"
