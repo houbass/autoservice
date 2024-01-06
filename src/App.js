@@ -65,13 +65,9 @@ function App() {
     if(allImagesLoaded === true){
       setMainOpacity(1);
 
-      const thisTimeout = setTimeout(() => {
-        setIntroAnimClass(["carMotion", "introUnderline", "introTitle"])
-      }, 700)
+      setIntroAnimClass(["carMotion", "introUnderline", "introTitle"])
 
-      return() => {
-        clearTimeout(thisTimeout);
-      }
+
     }
   }, [allImagesLoaded])
 
