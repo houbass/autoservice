@@ -1,11 +1,9 @@
-
-
+import React, { useEffect, useRef, useState } from "react";
 
 //LOTTIE LIB
 import Lottie from "lottie-react";
-
 import carAnim from "../animations/car.json";
-import { useEffect, useRef, useState } from "react";
+
 
 export default function Header({ header, ToolPic, introAnimClass }) {
 
