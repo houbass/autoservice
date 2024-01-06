@@ -5,8 +5,9 @@ import Lottie from "lottie-react";
 import carAnim from "../animations/car.json";
 
 
-export default function Header({ header, ToolPic, introAnimClass }) {
+export default function Header({ header, introAnimClass, mainOpacity }) {
 
+    
     
     //title ref
     const titleRef = useRef();
@@ -21,8 +22,7 @@ export default function Header({ header, ToolPic, introAnimClass }) {
         setCoverHeight(titleRef.current?.offsetHeight)
         setCoverOffset(carRef.current?.offsetHeight / 2.1)
     }
-
-
+    
     useEffect(() => {
         window.addEventListener("resize", resizeFun);
 
@@ -42,17 +42,21 @@ export default function Header({ header, ToolPic, introAnimClass }) {
         ref={header}
         style={{
             width: "100%",
-            paddingTop: "60px"
+            paddingTop: "60px",
+            opacity: mainOpacity,
+            transition: "1s"
         }}>
             <header>
                 <img 
                 className="introHeight"
-                src={ToolPic} 
+                //src={ToolPic} 
+                src="tool.webp"
                 alt="tools"
                 style={{
                     width: "100%",
                     objectFit: "cover"
                 }}
+                loading="lazy"
                 />
                 
                 <div 

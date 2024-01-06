@@ -1,11 +1,6 @@
 
-//LOTTIE LIB
-import Lottie from "lottie-react";
 
-//LOTTIE DATA
-import ServiceAnim from "../animations/service.json";
-
-export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic }) {
+export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic, mainOpacity }) {
 
     const row1 = [
         {
@@ -54,20 +49,11 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                 alignItems: "center",
                 width: "100%",
                 paddingTop: "50px",
-                paddingBottom: "50px",
+
+                opacity: mainOpacity,
+                transition: "1s"
             }}>
-
-                <Lottie 
-                className="mainLottie"
-                animationData={ServiceAnim} 
-                />
-
-                <br/>
-                <h2 style={{
-                    padding: "0px 10px"
-                }}>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</h2>
-                <br/>
-
+                <h1>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</h1>
                 <div 
                 className="serviceCard"
                 style={{
@@ -75,7 +61,6 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                 }}
                 >
                     {row1.map(e => {
-
                         return(
                             <div 
                             key={e.name}
@@ -84,7 +69,7 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                                     <img 
                                     src={e.pic} 
                                     alt={e.name}
-                                    width={"50%"}
+                                    width="50px"
                                     />
                                 </div>
                                 <h2>{e.name}</h2>
@@ -111,7 +96,7 @@ export default function Main({main, DiagnosticPic, KlimaPic, SkloPic, Pneuservis
                                     <img 
                                     src={e.pic} 
                                     alt={e.name}
-                                    width={"50%"}
+                                    width="50px"
                                     />
                                 </div>
         

@@ -72,30 +72,25 @@ function App() {
       return() => {
         clearTimeout(thisTimeout);
       }
-
     }
   }, [allImagesLoaded])
 
   
   return (
     <div 
-    className="App"
-    style={{
-      opacity: mainOpacity,
-      transition: "2s"
-    }}
-    >
+    className="App" >
       <Navbar 
       header={header}
       main={main}
       kontakt={kontakt} 
       galery={galery} 
       about={about} 
+      setIntroAnimClass={setIntroAnimClass}
       />
       <Header 
       header={header} 
-      ToolPic={ToolPic}
-      introAnimClass={introAnimClass}
+      introAnimClass={introAnimClass} 
+      mainOpacity={mainOpacity} 
       />
       <Main 
       main={main}
@@ -104,7 +99,8 @@ function App() {
       SkloPic={SkloPic} 
       PneuservisPic={PneuservisPic} 
       AutoservisPic={AutoservisPic} 
-      StkPic={StkPic}
+      StkPic={StkPic} 
+      mainOpacity={mainOpacity}
       />
       <Map kontakt={kontakt}/>
       <Galery galery={galery}/>

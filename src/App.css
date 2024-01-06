@@ -303,21 +303,26 @@ text {
 }
 
 .carMotionDefault {
-  margin-left: -700px;
+  /*margin-left: -700px; */
+  transform: translateX(-700px);
 }
 
 .carMotion {
-  margin-left: -700px;
+  /*margin-left: -700px; */
+
+  transform: translateX(-700px);
   animation: carAnim 3s linear forwards;
 }
 
 
 @keyframes carAnim {
   0% {
-    margin-left: -700px;
+
+    transform: translateX(-700px);
   }
   100% {
-    margin-left: 100vw;
+
+    transform: translateX(100vw);
   }
 }
 
