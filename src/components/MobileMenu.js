@@ -36,7 +36,7 @@ export default function MobileMenu({ menu, selections }) {
             setPath2(null);
             path3 = crossPath3;
 
-            const path1animation1 = anime({
+            anime({
                 targets: path1ref.current,
                 d: [
                   { value: path1
@@ -47,7 +47,7 @@ export default function MobileMenu({ menu, selections }) {
                 loop: false
               });
 
-              const path3animation1 = anime({
+              anime({
                 targets: path3ref.current,
                 d: [
                   { value: path3
@@ -65,7 +65,7 @@ export default function MobileMenu({ menu, selections }) {
             setPath2("M10 29H100V49H0V29Z");
             path3 = burgerPath3;
 
-            const path1animation2 = anime({
+            anime({
                 targets: path1ref.current,
                 d: [
                   { value: path1
@@ -76,7 +76,7 @@ export default function MobileMenu({ menu, selections }) {
                 loop: false
               });
 
-              const path3animation2 = anime({
+              anime({
                 targets: path3ref.current,
                 d: [
                   { value: path3

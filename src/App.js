@@ -23,7 +23,6 @@ import Footer from './components/Footer';
 
 
 function App() {
-
   const header = useRef();
   const main = useRef();
   const kontakt = useRef();
@@ -32,7 +31,7 @@ function App() {
 
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [mainOpacity, setMainOpacity] = useState(0);
-  const [introAnimClass, setIntroAnimClass] = useState(["textPathDefault", "introUnderlineDefault"]);
+  const [introAnimClass, setIntroAnimClass] = useState(["carMotionDefault", "introUnderlineDefault", "introTitleDefault"]);
 
   //IMAGES
   const imageUrls = [ToolPic, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic];
@@ -58,6 +57,7 @@ function App() {
     };
 
     loadAllImages();
+    // eslint-disable-next-line
   }, []);
 
   //CHECK IF ALL IMAGES ARE LOADED
@@ -65,9 +65,14 @@ function App() {
     if(allImagesLoaded === true){
       setMainOpacity(1);
 
-      setTimeout(() => {
-        setIntroAnimClass(["textPath", "introUnderline"])
+      const thisTimeout = setTimeout(() => {
+        setIntroAnimClass(["carMotion", "introUnderline", "introTitle"])
       }, 700)
+
+      return() => {
+        clearTimeout(thisTimeout);
+      }
+
     }
   }, [allImagesLoaded])
 
@@ -85,7 +90,7 @@ function App() {
       main={main}
       kontakt={kontakt} 
       galery={galery} 
-      about={about}
+      about={about} 
       />
       <Header 
       header={header} 

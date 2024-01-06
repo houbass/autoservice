@@ -115,6 +115,7 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
     useEffect(() => {
         geersRef.current.stop();
         scrolling();
+        // eslint-disable-next-line
     }, []);
     
     return(
@@ -135,6 +136,15 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
             <Lottie 
             onClick={() => {
                 header.current.scrollIntoView();
+
+                /*
+                setIntroAnimClass(["carMotionDefault", "introUnderlineDefault", "introTitleDefault"]);
+
+                setTimeout(() => {
+                    setIntroAnimClass(["carMotion", "introUnderline", "introTitle"]);
+                    console.log("yp")
+                }, 100)
+                */
             }} 
             style={{
                 cursor: "pointer",
@@ -160,7 +170,17 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
         </div>
         <div 
         onClick={() => {
+
             header.current.scrollIntoView();
+
+            /*
+            setIntroAnimClass(["carMotionDefault", "introUnderlineDefault", "introTitleDefault"]);
+
+            setTimeout(() => {
+                setIntroAnimClass(["carMotion", "introUnderline", "introTitle"]);
+                console.log("yp")
+            }, 100)
+            */
         }} 
         className={goUpVisibility}
         style={{
