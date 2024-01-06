@@ -1,6 +1,40 @@
+import React, { useEffect, useRef, useState } from "react";
+
+//LOTTIE LIB
+import Lottie from "lottie-react";
+import carAnim from "../animations/car.json";
 
 
-export default function Header({ header, ToolPic, introAnimClass }) {
+export default function Header({ header, introAnimClass, mainOpacity }) {
+
+    
+    
+    //title ref
+    const titleRef = useRef();
+    const carRef = useRef();
+
+    const [coverHeight, setCoverHeight] = useState(null);
+    const [coverOffset, setCoverOffset] = useState(null);
+
+
+    //UDJUST COVER INTRO COVER BANER WHEN RESIZE
+    function resizeFun() {
+        setCoverHeight(titleRef.current?.offsetHeight)
+        setCoverOffset(carRef.current?.offsetHeight / 2.1)
+    }
+    
+    useEffect(() => {
+        window.addEventListener("resize", resizeFun);
+
+        return () => {
+            window.removeEventListener("resize", resizeFun);
+        }
+    })
+
+    useEffect(() => {
+        resizeFun();
+    }, [])
+
 
     return(
         <>
@@ -8,17 +42,21 @@ export default function Header({ header, ToolPic, introAnimClass }) {
         ref={header}
         style={{
             width: "100%",
-            paddingTop: "60px"
+            paddingTop: "60px",
+            opacity: mainOpacity,
+            transition: "1s"
         }}>
             <header>
                 <img 
                 className="introHeight"
-                src={ToolPic} 
+                //src={ToolPic} 
+                src="tool.webp"
                 alt="tools"
                 style={{
                     width: "100%",
                     objectFit: "cover"
                 }}
+                loading="lazy"
                 />
                 
                 <div 
@@ -33,16 +71,9 @@ export default function Header({ header, ToolPic, introAnimClass }) {
                     justifyContent: "center"
                 }}>
                     <div 
-                    style={{
-                        background: "rgba(40, 44, 52, 0.9)",
-                        width: "100%",
-                        padding: "50px 0px",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems:"center",
-                        justifyContent: "center"
-
-                    }}>
+                    ref={titleRef}
+                    className={introAnimClass[2]}
+                    >
                         <div
                         style={{
                             width: "90%",
@@ -53,7 +84,7 @@ export default function Header({ header, ToolPic, introAnimClass }) {
                             viewBox="0 0 430 50"
                             >
                             <text 
-                            className={introAnimClass[0]}
+                            className="textPathDefault"
                             x="11" 
                             y="41"
                             >Autoservis Laube</text>
@@ -61,6 +92,45 @@ export default function Header({ header, ToolPic, introAnimClass }) {
 
                             <div 
                             className={introAnimClass[1]}>
+                            </div>
+                        </div>
+
+                        <div 
+                        style={{
+                            width: "100%",
+                            position: "absolute",
+                            left: "0px",
+                            overflow: "auto",
+                            overflowX: "hidden",
+                        }}>
+
+                            <div 
+                            className={introAnimClass[0]}
+                            style={{
+                                display: "flex",
+                                flexDirection: "row",
+                                alignItems: "center",
+                                width: "100%"
+                            }}
+                            >
+                                <div
+                                ref={carRef}
+                                >
+                                <Lottie 
+                                    className="carAnimationDefault"
+                                    animationData={carAnim}
+                                />
+                                </div>
+
+                                <div
+                                style={{
+                                    height: coverHeight + "px",
+                                    width: "5000px",
+                                    background: "rgba(40, 44, 52, 1)",
+                                    marginLeft: coverOffset + "px",
+                                    position: "absolute",
+                                    zIndex: "1"
+                                }}></div>
                             </div>
                         </div>
                     </div>

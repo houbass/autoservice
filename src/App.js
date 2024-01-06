@@ -1,4 +1,4 @@
-import react, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 //style
 import './App.css';
@@ -23,7 +23,6 @@ import Footer from './components/Footer';
 
 
 function App() {
-
   const header = useRef();
   const main = useRef();
   const kontakt = useRef();
@@ -32,7 +31,7 @@ function App() {
 
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
   const [mainOpacity, setMainOpacity] = useState(0);
-  const [introAnimClass, setIntroAnimClass] = useState(["textPathDefault", "introUnderlineDefault"]);
+  const [introAnimClass, setIntroAnimClass] = useState(["carMotionDefault", "introUnderlineDefault", "introTitleDefault"]);
 
   //IMAGES
   const imageUrls = [ToolPic, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic];
@@ -58,6 +57,7 @@ function App() {
     };
 
     loadAllImages();
+    // eslint-disable-next-line
   }, []);
 
   //CHECK IF ALL IMAGES ARE LOADED
@@ -65,32 +65,28 @@ function App() {
     if(allImagesLoaded === true){
       setMainOpacity(1);
 
-      setTimeout(() => {
-        setIntroAnimClass(["textPath", "introUnderline"])
-      }, 700)
+      setIntroAnimClass(["carMotion", "introUnderline", "introTitle"])
+
+
     }
   }, [allImagesLoaded])
 
   
   return (
     <div 
-    className="App"
-    style={{
-      opacity: mainOpacity,
-      transition: "2s"
-    }}
-    >
+    className="App" >
       <Navbar 
       header={header}
       main={main}
       kontakt={kontakt} 
       galery={galery} 
-      about={about}
+      about={about} 
+      setIntroAnimClass={setIntroAnimClass}
       />
       <Header 
       header={header} 
-      ToolPic={ToolPic}
-      introAnimClass={introAnimClass}
+      introAnimClass={introAnimClass} 
+      mainOpacity={mainOpacity} 
       />
       <Main 
       main={main}
@@ -99,7 +95,8 @@ function App() {
       SkloPic={SkloPic} 
       PneuservisPic={PneuservisPic} 
       AutoservisPic={AutoservisPic} 
-      StkPic={StkPic}
+      StkPic={StkPic} 
+      mainOpacity={mainOpacity}
       />
       <Map kontakt={kontakt}/>
       <Galery galery={galery}/>

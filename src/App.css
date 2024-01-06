@@ -215,14 +215,12 @@ text {
 }
 
 .textPathDefault {
-  stroke: #ffff;
+
   font-size: 50px;
   font-weight: bold;
-  stroke-width: 2px;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  fill: transparent;
-  opacity: 0;
+
+  fill: rgba(245, 245, 245, 1); 
+  opacity: 1;
 }
 
 .textPath {
@@ -269,7 +267,7 @@ text {
   border-radius: 2.5px;
   background: rgb(245, 245, 245);
   margin-top: -7px;
-  animation: introUnderlineAnim 1s forwards 2s;
+  animation: introUnderlineAnim 1s forwards 4s;
   opacity: 0;
 }
 
@@ -293,5 +291,67 @@ text {
     margin-top: -7px;
     animation: introUnderlineAnim 1s forwards 2s;
     opacity: 0;
+  }
+}
+
+.carAnimationDefault {
+  transform: scaleX(-1);
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  z-index: 10;
+}
+
+.carMotionDefault {
+  /*margin-left: -700px; */
+  transform: translateX(-700px);
+}
+
+.carMotion {
+  /*margin-left: -700px; */
+
+  transform: translateX(-700px);
+  animation: carAnim 3s linear forwards;
+}
+
+
+@keyframes carAnim {
+  0% {
+
+    transform: translateX(-700px);
+  }
+  100% {
+
+    transform: translateX(100vw);
+  }
+}
+
+.introTitleDefault {
+  background: rgba(40, 44, 52, 1);
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.introTitle {
+  background: rgba(40, 44, 52, 1);
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: introColor 2s forwards 4s;
+}
+
+@keyframes introColor {
+  0% {
+    background: rgba(40, 44, 52, 1);
+  }
+  100% {
+    background: rgba(40, 44, 52, 0.8);
   }
 }

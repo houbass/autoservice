@@ -1,13 +1,17 @@
 import { useEffect, useRef, useState } from "react"
 
+//libraries
 import Lottie from "lottie-react";
+import anime from 'animejs';
+
+//lottie data
 import geers from "../animations/geers.json"
 
 //components
 import MobileMenu from "./MobileMenu";
 import Menu from "./Menu";
 
-export default function Navbar({ header, main, kontakt, galery, about }) {
+export default function Navbar({ header, main, kontakt, galery, about, setIntroAnimClass }) {
 
     const geersRef = useRef();
 
@@ -15,6 +19,7 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
     const [goUpVisibility, setGoUpVisibility] = useState("goUpHidden")
     const [firstTImeHandler, setFirstTimeHandler] = useState(true);
     const [prevScroll, setPrevScroll] = useState(0);
+    const [menuVisibility, setMenuVisibility] = useState("mobileMenuHidden");
 
     const menu = [
         {
@@ -115,8 +120,147 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
     useEffect(() => {
         geersRef.current.stop();
         scrolling();
+        // eslint-disable-next-line
     }, []);
-    
+
+
+    //MOBILE MENU
+    //burger SVG ref and Paths
+    const svgRef = useRef();
+    const path1ref = useRef();
+    const path3ref = useRef();
+
+    //MOBILE BURGER STATES
+    const [burgerColor, setBurgerColor] = useState("rgba(255, 255, 255, 0.9)");
+    const [path2, setPath2] = useState("M10 29H100V49H0V29Z")
+
+    //burger SVG paths
+    const burgerPath1 = "M0 0H100V20H0V0Z";
+    const crossPath1 = "M11.5381 0L99.6658 62.2438L88.1277 78.58L7.15256e-07 16.3362L11.5381 0Z";
+    const burgerPath3 = "M0 58H100V78H0V58Z";
+    const crossPath3 = "M0 62.2519L88.3527 2.3586e-06L99.8722 16.3494L11.5195 78.6013L0 62.2519Z";
+
+
+    //SHOW/HIDE MOBILE MENU
+    function showMenu() {
+        let path1;
+        let path3;
+
+        if(menuVisibility === "mobileMenuHidden" || menuVisibility === "mobileMenuHide") {
+            setMenuVisibility("mobileMenuShow");
+            setBurgerColor("rgba(255, 70, 70, 1)");
+
+            path1 = crossPath1;
+            setPath2(null);
+            path3 = crossPath3;
+
+            anime({
+                targets: path1ref.current,
+                d: [
+                    { value: path1
+                    },
+                ],
+                easing: 'easeOutQuad',
+                duration: 300,
+                loop: false
+                });
+
+                anime({
+                targets: path3ref.current,
+                d: [
+                    { value: path3
+                    },
+                ],
+                easing: 'easeOutQuad',
+                duration: 100,
+                loop: false
+            });
+        } else {
+            setMenuVisibility("mobileMenuHide");
+            setBurgerColor("rgba(255, 255, 255, 1)");
+
+            path1 = burgerPath1;
+            setPath2("M10 29H100V49H0V29Z");
+            path3 = burgerPath3;
+
+            anime({
+                targets: path1ref.current,
+                d: [
+                    { value: path1
+                    },
+                ],
+                easing: 'easeOutQuad',
+                duration: 100,
+                loop: false
+                });
+
+                anime({
+                targets: path3ref.current,
+                d: [
+                    { value: path3
+                    },
+                ],
+                easing: 'easeOutQuad',
+                duration: 500,
+                loop: false
+            });
+        }
+    }
+
+    //HIDE MOBILE MENU
+    function hideMenu() {
+        let path1;
+        let path3;
+
+        if(menuVisibility === "mobileMenuHidden" || menuVisibility === "mobileMenuHide") {
+
+        } else{
+            setMenuVisibility("mobileMenuHide");
+            setBurgerColor("rgba(255, 255, 255, 1)");
+
+            path1 = burgerPath1;
+            setPath2("M10 29H100V49H0V29Z");
+            path3 = burgerPath3;
+
+            anime({
+                targets: path1ref.current,
+                d: [
+                    { value: path1
+                    },
+                ],
+                easing: 'easeOutQuad',
+                duration: 100,
+                loop: false
+                });
+
+                anime({
+                targets: path3ref.current,
+                d: [
+                    { value: path3
+                    },
+                ],
+                easing: 'easeOutQuad',
+                duration: 500,
+                loop: false
+                });
+            }
+        }
+
+
+
+
+        //INTRO ANIMATION AGAIN
+        //setIntroAnimClass
+        async function introAnim() {
+                setIntroAnimClass(["carMotionDefault", "introUnderlineDefault", "introTitleDefault"]);
+        
+                // Wait for the next render cycle
+                await new Promise((resolve) => setTimeout(resolve, 0));
+        
+                // Set the second value
+                setIntroAnimClass(["carMotion", "introUnderline", "introTitle"]);
+        };
+
     return(
         <>
         <div 
@@ -135,6 +279,9 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
             <Lottie 
             onClick={() => {
                 header.current.scrollIntoView();
+                hideMenu();
+                introAnim();
+
             }} 
             style={{
                 cursor: "pointer",
@@ -148,7 +295,16 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
 
             <MobileMenu 
             menu={menu} 
-            selections={selections}
+            selections={selections} 
+            menuVisibility={menuVisibility} 
+            showMenu={showMenu} 
+            svgRef={svgRef} 
+            path1ref={path1ref} 
+            burgerPath1={burgerPath1} 
+            burgerColor={burgerColor} 
+            path2={path2} 
+            path3ref={path3ref} 
+            burgerPath3={burgerPath3}
             />
 
             <Menu 
@@ -156,11 +312,12 @@ export default function Navbar({ header, main, kontakt, galery, about }) {
             selections={selections}
             />
 
-
         </div>
         <div 
         onClick={() => {
             header.current.scrollIntoView();
+            hideMenu();
+            introAnim();
         }} 
         className={goUpVisibility}
         style={{

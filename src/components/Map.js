@@ -1,5 +1,4 @@
 
-
 export default function Map({ kontakt }) {
 
     return(
@@ -14,47 +13,47 @@ export default function Map({ kontakt }) {
                 width: "100%",
                 background: "rgb(245, 245, 245)",
                 color: "rgb(40, 44, 52)",
-                paddingTop: "60px",
+                paddingTop: "50px",
                 paddingBottom: "200px",
             }}>
 
-            <h1 style={{paddingBottom: "100px"}}>Kde nás najdete:</h1>
+                <h1 style={{paddingBottom: "100px"}}>Kde nás najdete:</h1>
                 <div 
                 className="serviceCard" 
                 style={{
                     alignItems: "center",
                 }}
                 >
-
                     <div 
                     style={{
                         textAlign: "left",
                         paddingLeft: "10px"
                     }}>
                         <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
-                        <p>Bukovina bla bla bla</p>
+                        <p>Horní Bukovina 52, 295 01</p>
 
                         <p style={{fontSize: "17px", fontWeight: "bold"}}>Telefon:</p>
-                        <p>+420 12454788488</p>
+                        <p>+420 739 821 125</p>
 
-                        <h4>Email:</h4>
+                        <p style={{fontSize: "17px", fontWeight: "bold"}}>Email:</p>
                         <p>smrdimikhaar@hodne.cz</p>
 
-                        <h4>IČO:</h4>
-                        <p>123456789</p>
+                        <p style={{fontSize: "17px", fontWeight: "bold"}}>IČO:</p>
+                        <p>17144965</p>
                     </div>
                     
                     <iframe 
                     className="map" 
                     title="map"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2535.5614692721865!2d14.926542676066264!3d50.5423277807448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470951f0817415a1%3A0xd8a49726ec89b827!2sHorn%C3%AD%20Bukovina%2053%2C%20295%2001%20Horn%C3%AD%20Bukovina!5e0!3m2!1scs!2scz!4v1703777388137!5m2!1scs!2scz" 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10142.292765101642!2d14.929176808036887!3d50.54210975805526!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470951f9bf2e6521%3A0x1aa775c8cccf01a5!2sAutoservis%20-%20Laube!5e0!3m2!1scs!2scz!4v1704545667585!5m2!1scs!2scz" 
                     height="250" 
                     allowFullScreen="" 
                     loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    referrerPolicy="no-referrer-when-downgrade" 
+                    >
+                    </iframe>     
+            
                 </div>
-
             </div>
         </>
     )
