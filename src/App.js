@@ -15,8 +15,8 @@ import StkPic from "./pictures/stk.svg";
 //components
 import Navbar from './components/Navbar';
 import Header from './components/Header';
-import Main from './components/Main';
-import Map from './components/Map';
+import Sluzby from './components/Sluzby';
+import Kontakt from './components/Kontakt';
 import Galery from './components/Galery';
 import About from './components/About';
 import Footer from './components/Footer';
@@ -60,14 +60,12 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
+
   //CHECK IF ALL IMAGES ARE LOADED
   useEffect(() => {
     if(allImagesLoaded === true){
       setMainOpacity(1);
-
       setIntroAnimClass(["carMotion", "introUnderline", "introTitle"])
-
-
     }
   }, [allImagesLoaded])
 
@@ -88,7 +86,8 @@ function App() {
       introAnimClass={introAnimClass} 
       mainOpacity={mainOpacity} 
       />
-      <Main 
+
+      <Sluzby 
       main={main}
       DiagnosticPic={DiagnosticPic} 
       KlimaPic={KlimaPic}
@@ -98,7 +97,8 @@ function App() {
       StkPic={StkPic} 
       mainOpacity={mainOpacity}
       />
-      <Map kontakt={kontakt}/>
+
+      <Kontakt kontakt={kontakt}/>
       <Galery galery={galery}/>
       <About about={about}/>
       <Footer />

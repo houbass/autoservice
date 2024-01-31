@@ -10,7 +10,7 @@ export default function MobileMenu({ menu, selections, menuVisibility, showMenu,
             className="mobileBtn"
             style={{
                 position: "absolute",
-                right: "20px",
+                right: "var(--divPadSide)",
                 cursor: "pointer"
             }}>
                 <svg ref={svgRef} width="40" height="40" viewBox="0 0 100 78" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,9 +31,9 @@ export default function MobileMenu({ menu, selections, menuVisibility, showMenu,
                 top: "60px",
                 right: "0px",
                 background: "black",
-                paddingRight: "20px",
-                paddingBottom: "20px",
-                paddingLeft: "20px",
+                paddingRight: "var(--divPadSide)",
+                paddingBottom: "var(--divPadSide)",
+                paddingLeft: "var(--divPadSide)",
                 borderRadius: "0 0 0 20px",
             }}>
                 {menu.map((e, i) => {

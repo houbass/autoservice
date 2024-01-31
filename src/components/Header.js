@@ -6,16 +6,13 @@ import carAnim from "../animations/car.json";
 
 
 export default function Header({ header, introAnimClass, mainOpacity }) {
-
-    
-    
+  
     //title ref
     const titleRef = useRef();
     const carRef = useRef();
 
     const [coverHeight, setCoverHeight] = useState(null);
     const [coverOffset, setCoverOffset] = useState(null);
-
 
     //UDJUST COVER INTRO COVER BANER WHEN RESIZE
     function resizeFun() {
@@ -128,7 +125,7 @@ export default function Header({ header, introAnimClass, mainOpacity }) {
 
                                 <div
                                 style={{
-                                    height: coverHeight + "px",
+                                    height: (coverHeight - 5) + "px",
                                     width: "5000px",
                                     background: "rgba(40, 44, 52, 1)",
                                     marginLeft: coverOffset + "px",

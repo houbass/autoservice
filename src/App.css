@@ -4,9 +4,22 @@
 }
 
 :root {
-  background-color: rgb(40, 44, 52);
-  color: rgb(245, 245, 245);
+  --bg1: rgb(40, 44, 52);
+  --bg2: rgb(245, 245, 245);
+  --col1: rgb(245, 245, 245);
+  --col2: rgb(40, 44, 52);
+
+  --divPad: 100px;
+  --divPadSide: 20px;
+  --mb1: 50px;
+  --mb2: 10px;
+
+  --maxWidth: 1000px;
+
+  background-color: var(--bg1);
+  color: var(--col1);
   scroll-behavior: smooth;
+
 }
 
 text {
@@ -18,6 +31,43 @@ text {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.container {
+  padding: var(--divPad) 0px;
+  max-width: var(--maxWidth);
+  width: 100%;
+}
+
+.fc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fr {
+  display: flex;
+  flex-direction: row;
+}
+
+.gap1 {
+  gap: var(--mb1);
+}
+
+.fullW {
+  width: 100%;
+}
+
+.page1{
+  padding: 0px var(--divPadSide);
+  background: var(--bg1);
+  color: var(--col1);
+}
+
+.page2{
+  padding: 0px var(--divPadSide);
+  background: var(--bg2);
+  color: var(--col2);
 }
 
 .menu {
@@ -89,9 +139,9 @@ text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
-  max-width: 1000px;
-  width: 100%;
+  /*width: 100%;*/
+  gap: var(--mb1);
+
 }
 
 .map {
@@ -104,9 +154,8 @@ text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60%;
-  gap: 10px;
-  padding: 0px 10px;
+  width: 100%;
+  gap: var(--mb2);
 }
 
 .mainLottie {
@@ -123,7 +172,6 @@ text {
   .map {
     border-color: transparent;
     width: 400px;
-    padding-right: 10px;
   }
 
   .serviceCard {
@@ -131,7 +179,6 @@ text {
     flex-direction: row;
     justify-content: space-between;
     align-items: normal;
-    max-width: 1000px;
     width: 100%;
   }
 
@@ -139,9 +186,7 @@ text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 33%;
-    gap: 10px;
-    padding: 0px 10px;
+    gap: var(--mb2);
   }
 
   .mainLottie {
@@ -310,19 +355,22 @@ text {
 .carMotion {
   /*margin-left: -700px; */
 
-  transform: translateX(-700px);
   animation: carAnim 3s linear forwards;
 }
 
 
 @keyframes carAnim {
   0% {
-
+    opacity: 1;
     transform: translateX(-700px);
   }
-  100% {
-
+  99% {
     transform: translateX(100vw);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
   }
 }
 
@@ -354,4 +402,12 @@ text {
   100% {
     background: rgba(40, 44, 52, 0.8);
   }
+}
+
+
+.galeryImg {
+
+  scroll-snap-align: center;
+  object-fit: cover;
+
 }

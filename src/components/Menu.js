@@ -14,7 +14,7 @@ export default function Menu({ menu, selections }) {
                 flexDirection: "row",
                 gap: "20px",
                 position: "absolute",
-                right: "20px"
+                right: "var(--divPadSide)"
             }}>
                 {menu.map((e, i) => {
                     return(

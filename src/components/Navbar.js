@@ -23,22 +23,33 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
 
     const menu = [
         {
-            name: "služby",
+            name: "Služby",
             ref: main.current
         }, 
         {
-            name: "kontakt",
+            name: "Kontakt",
             ref: kontakt.current
         },
         {
-            name: "galerie",
+            name: "Galerie",
             ref: galery.current
         },
         {
-            name: "o mně",
+            name: "O Mně",
             ref: about.current
         },
     ]
+
+    //INTRO ANIMATION AGAIN
+    async function introAnim() {
+        setIntroAnimClass(["carMotionDefault", "introUnderlineDefault", "introTitleDefault"]);
+
+        // Wait for the next render cycle
+        await new Promise((resolve) => setTimeout(resolve, 0));
+
+        // Set the second value
+        setIntroAnimClass(["carMotion", "introUnderline", "introTitle"]);
+    };
 
 
     //go up button visibility
@@ -67,7 +78,8 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
 
     //scrolling function
     function scrolling() {
-        const screen = window.innerHeight / 2;
+        const screen = window.innerHeight / 4;
+        const screen2 = window.innerHeight / 1.5;
 
         //check scroll direction
         scrollDirection()
@@ -84,11 +96,11 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
             setSelections(["0%", "100%", "0%", "0%"]);
         } else if(
             galery.current.getBoundingClientRect().y < screen &&
-            about.current.getBoundingClientRect().y > screen
+            about.current.getBoundingClientRect().y > screen2
         ) {
             setSelections(["0%", "0%", "100%", "0%"]);
         } else if(
-            about.current.getBoundingClientRect().y < screen
+            about.current.getBoundingClientRect().y < screen2
         ) {
             setSelections(["0%", "0%", "0%", "100%"]);
         }else{
@@ -249,17 +261,7 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
 
 
 
-        //INTRO ANIMATION AGAIN
-        //setIntroAnimClass
-        async function introAnim() {
-                setIntroAnimClass(["carMotionDefault", "introUnderlineDefault", "introTitleDefault"]);
-        
-                // Wait for the next render cycle
-                await new Promise((resolve) => setTimeout(resolve, 0));
-        
-                // Set the second value
-                setIntroAnimClass(["carMotion", "introUnderline", "introTitle"]);
-        };
+
 
     return(
         <>
@@ -285,7 +287,7 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
             }} 
             style={{
                 cursor: "pointer",
-                paddingLeft: "20px",
+                paddingLeft: "var(--divPadSide)",
                 width: "40px"
             }}
             lottieRef={geersRef}
@@ -323,7 +325,7 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
         style={{
             position: "fixed",
             zIndex: "10",
-            right: "10px",
+            right: "var(--divPadSide)",
             background: "black",
             width:"30px",
             height: "30px",
