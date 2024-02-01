@@ -275,6 +275,8 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
             background: "var(--navBg)",
             width: "100%",
             height: "60px",
+            top: "-10px",
+            paddingTop: "10px",
             zIndex: "10",
             opacity: mainOpacity
         }}>

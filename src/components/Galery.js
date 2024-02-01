@@ -37,7 +37,7 @@ export default function Galery({ galery }) {
                     <div className="container fc gap1">
                         <div className="fc pad1 borderB1">
                             <h1 className="pad2">Galerie</h1>
-                            <p>Mrkněte na naši fotogalerii a objevte naši práci v akci.</p>
+                            <p>Mrkněte na tuto fotogalerii a poznejte naši práci v akci.</p>
                         </div>
                         <ImageGallery 
                         autoPlay={true} 
