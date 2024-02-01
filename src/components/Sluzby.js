@@ -57,7 +57,7 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
         // animate on small screen only
         let thisClass = "sluzbyAnimDefault"
         
-        if(thisDiv && screenWidth <= 600) {                                        
+        if(thisDiv && mainOpacity === 1) {                                        
             const thisY = thisDiv.getBoundingClientRect().y
 
             if(thisY < screenHeight - (screenHeight * 0.1)){

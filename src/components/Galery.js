@@ -15,12 +15,15 @@ export default function Galery({ galery }) {
     const images = [
         {
             original: car1,
+            originalAlt: "opravy"
           },
           {
             original: car2,
+            originalAlt: "opravy"
           },
           {
             original: car1,
+            originalAlt: "opravy"
           },
     ]
 
