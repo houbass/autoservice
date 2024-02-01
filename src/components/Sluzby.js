@@ -9,17 +9,17 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
     const row1 = [
         {
             name: "Autoservis",
-            text: "Kompletní autoservis, výměna olejů a filtrů, brzd, tlumičů, rozvodových řemenů a řetězů, spojek, opravy motorů",
+            text: "Kompletní autoservis, výměna olejů a filtrů, brzd, tlumičů, rozvodových řemenů a řetězů, spojek, opravy motorů.",
             pic: AutoservisPic
         }, 
         {
             name: "Pneuservis",
-            text: "Kompletní pneuservis, přezutí, vyvážení, opravy defektů pneumatik",
+            text: "Kompletní pneuservis, přezutí, vyvážení, opravy defektů pneumatik.",
             pic: PneuservisPic
         },
         {
             name: "Klimatizace",
-            text: "Servis a doplnění klimatizace",
+            text: "Servis a doplnění klimatizace.",
             pic: KlimaPic
         }
     ];
@@ -27,17 +27,17 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
     const row2 = [
         {
             name: "Výměna Autoskel",
-            text: "Výměna nebo oprava poškozeného lepeného autoskla",
+            text: "Výměna nebo oprava poškozeného lepeného autoskla.",
             pic: SkloPic
         }, 
         {
             name: "Diagnostika",
-            text: "Diagnostika Vašeho vozu profesionálním dignostickým přístrojem, čtení chybových kódů, regenerace DPF, reset servisních intervalů",
+            text: "Diagnostika Vašeho vozu profesionálním dignostickým přístrojem, čtení chybových kódů, regenerace DPF, reset servisních intervalů.",
             pic: DiagnosticPic
         },
         {
             name: "Příprava na STK",
-            text: "Připravíme vaš vůz na STK",
+            text: "Připravíme vaš vůz na STK.",
             pic: StkPic
         }
     ];
@@ -47,7 +47,6 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
     function showSluzby(e) {
 
         // check for screen size
-        const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
 
         // create unique ID
@@ -101,7 +100,10 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
                 >
                     
                     <div className="container fc gap1">
-                        <h1>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek</h1>
+                        <div className="fc pad1 borderB1">
+                            <h1 className="pad2">Služby</h1>
+                            <p>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</p>
+                        </div>
 
                         <div className="sluzby">
                             <div className="serviceCard">

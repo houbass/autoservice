@@ -35,7 +35,10 @@ export default function Galery({ galery }) {
             className="scrollMarginTop fullW">
                 <div className="page1 fc">
                     <div className="container fc gap1">
-                        <h1>Galerie</h1>
+                        <div className="fc pad1 borderB1">
+                            <h1 className="pad2">Galerie</h1>
+                            <p>Mrkněte na naši fotogalerii a objevte naši práci v akci.</p>
+                        </div>
                         <ImageGallery 
                         autoPlay={true} 
                         showNav={true} 

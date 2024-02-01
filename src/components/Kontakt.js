@@ -9,7 +9,11 @@ export default function Kontakt({ kontakt }) {
             className="scrollMarginTop fullW">
                 <div className="page2 fc">
                     <div className="container fc gap1">
-                        <h1 >Kde nás najdete</h1>
+                        <div className="fc pad1 borderB2">
+                            <h1 className="pad2">Kontakt</h1>
+                            <p>Máte nějaký problém nebo potřebujete poradit? Jsme tu pro vás.</p>
+                        </div>
+
                         <div className="serviceCard">
                             <div className="fcl">
                                 <div>

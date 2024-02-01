@@ -24,7 +24,7 @@
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 35px;
   pointer-events: none;
 }
 
@@ -40,6 +40,24 @@ p {
 
 address {
   font-style: normal;
+}
+
+.pad1 {
+  padding-bottom: var(--mb1);
+}
+
+.pad2 {
+  padding-bottom: var(--mb2);
+}
+
+.borderB1 {
+  border-bottom: 1px solid rgba(245,245,245,0.5);               
+  width: 100%
+}
+
+.borderB2 {
+  border-bottom: 1px solid rgba(40,44,52,0.5);               
+  width: 100%
 }
 
 .phoneLink {
@@ -123,10 +141,6 @@ address {
 
   .mobileBtn {
     visibility: hidden;
-  }
-  h1 {
-    font-size: 40px;
-    pointer-events: none;
   }
 }
 

@@ -10,7 +10,9 @@ export default function About({ about }) {
                 <div className="page2 fc">
                     <div className="container fc gap1">
 
-                        <h1>O Mně</h1>
+                        <div className="fc pad1 borderB2">
+                            <h1 className="pad2">O Mně</h1>
+                        </div>
                         <div>
                             <p>Pár vět o tom jak kalit, přitom zarobit a bejt fachman na všecko...</p>
                             <p>Pár vět o tom jak kalit, přitom zarobit a bejt fachman na všecko...</p>
