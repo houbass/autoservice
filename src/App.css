@@ -23,9 +23,38 @@
 
 }
 
-text {
+h1 {
+  font-size: 40px;
   pointer-events: none;
 }
+
+h2 {
+  font-size: 24px;
+  pointer-events: none;
+}
+
+p {
+  font-size: 18px;
+  pointer-events: none;
+}
+
+address {
+  font-style: normal;
+}
+
+.phoneLink {
+  text-decoration: none;
+  color: var(--col2);
+}
+
+.phone {
+  text-decoration: none;
+}
+
+.phoneLink:hover .phone {
+  text-decoration: underline;
+}
+
 
 .App {
   display: flex;
@@ -196,6 +225,14 @@ text {
     flex-direction: column;
     align-items: center;
     gap: var(--mb2);
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .card:hover {
+    background: rgba(255,255,255,0.1);
+    scale: 1.05;
+    transition: 0.2s;
   }
 
   .mainLottie {
@@ -420,3 +457,5 @@ text {
   object-fit: cover;
 
 }
+
+

@@ -1,7 +1,9 @@
 //img galery lib
 import ImageGallery from "react-image-gallery";
-import "react-image-gallery/styles/css/image-gallery.css";
+//import "react-image-gallery/styles/css/image-gallery.css";
 
+
+import "./image-gallery.css"
 
 //pic
 import car1 from "../pictures/galery/car1.png";

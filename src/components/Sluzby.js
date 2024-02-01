@@ -1,6 +1,6 @@
 
 
-export default function Sluzby({main, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic, mainOpacity }) {
+export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic, mainOpacity }) {
 
     const row1 = [
         {
@@ -57,7 +57,9 @@ export default function Sluzby({main, DiagnosticPic, KlimaPic, SkloPic, Pneuserv
                                 return(
                                     <div 
                                     key={e.name}
-                                    className="card">
+                                    className="card"
+                                    onClick={() => kontakt.current.scrollIntoView()}
+                                    >
                                         <div className="cardTopic">
                                             <img 
                                             src={e.pic} 
@@ -80,7 +82,9 @@ export default function Sluzby({main, DiagnosticPic, KlimaPic, SkloPic, Pneuserv
                                 return(
                                     <div 
                                     key={e.name}
-                                    className="card">
+                                    className="card"
+                                    onClick={() => kontakt.current.scrollIntoView()}
+                                    >
                                         <div className="cardTopic">
                                             <img 
                                             src={e.pic} 

@@ -1,6 +1,10 @@
 
 export default function Kontakt({ kontakt }) {
 
+    const email = "smrdimikhaar@hodne.cz"
+
+    //<a href="tel:+18881235467">1-888-123-5467</a>.
+
     return(
         <>
             <div 
@@ -16,18 +20,24 @@ export default function Kontakt({ kontakt }) {
                             }}>
                                 <div>
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
-                                    <p>Horní Bukovina 52, 295 01</p>
+                                    <address>
+                                        <p>Horní Bukovina 52, 295 01</p>
+                                    </address>
                                 </div>
 
-                                <div>
+                                <a className="phoneLink" href="tel:+420739821125">
+                                <div >
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>Telefon:</p>
-                                    <p>+420 739 821 125</p>
+                                    <p className="phone">+420 739 821 125</p>
                                 </div>
+                                </a>
 
+                                <a className="phoneLink" href={"mailto:" + email}>
                                 <div>
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>Email:</p>
-                                    <p>smrdimikhaar@hodne.cz</p>
+                                    <p className="phone">{email}</p>
                                 </div>
+                                </a>
 
                                 <div>
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>IČO:</p>

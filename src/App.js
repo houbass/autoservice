@@ -91,6 +91,7 @@ function App() {
 
       <Sluzby 
       main={main}
+      kontakt={kontakt}
       DiagnosticPic={DiagnosticPic} 
       KlimaPic={KlimaPic}
       SkloPic={SkloPic} 
