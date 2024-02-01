@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 
-export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic, mainOpacity }) {
+export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic, mainOpacity}) {
 
     const [refresh, setRefresh] = useState(true);
 
@@ -42,7 +42,6 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
         }
     ];
 
-
     // show sluzby decision
     function showSluzby(e) {
 
@@ -50,7 +49,7 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
         const screenHeight = window.innerHeight;
 
         // create unique ID
-        const thisId = e.name.split("").filter(e => e != " ").join("")
+        const thisId = e.name.split("").filter(e => e !== " ").join("")
         const thisDiv = document.getElementById(thisId);
 
         // animate on small screen only
@@ -70,7 +69,6 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
 
         return {thisId: thisId, thisClass: thisClass}
     }
-
 
     // refresh everytime you scroll
     function scrollFun() {
@@ -100,9 +98,13 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
                 >
                     
                     <div className="container fc gap1">
-                        <div className="fc pad1 borderB1">
-                            <h1 className="pad2">Služby</h1>
-                            <p>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</p>
+                        <div className="fcl pad1 borderB1 gap1">
+                            <p 
+                            className={"title darkT"}
+                            onClick={() => main.current.scrollIntoView()}
+                            >Služby</p>
+                            <h1>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</h1>
+                            
                         </div>
 
                         <div className="sluzby">

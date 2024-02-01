@@ -15,7 +15,9 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
 
     const geersRef = useRef();
 
+    // page selections
     const [selections, setSelections] = useState(["0%", "0%", "0%", "0%"]);
+    
     const [goUpVisibility, setGoUpVisibility] = useState("goUpHidden")
     const [firstTImeHandler, setFirstTimeHandler] = useState(true);
     const [prevScroll, setPrevScroll] = useState(0);

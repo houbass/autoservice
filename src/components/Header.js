@@ -73,7 +73,7 @@ export default function Header({ header, introAnimClass, mainOpacity }) {
                         <div
                         style={{
                             width: "90%",
-                            maxWidth: "1000px"
+                            maxWidth: "500px"
                         }}>
                             <svg 
                             width="100%" 

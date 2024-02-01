@@ -5,7 +5,6 @@ export default function Kontakt({ kontakt, mainOpacity }) {
 
     const [animClass1, setAnimClass1] = useState("");
 
-
     const email = "smrdimikhaar@hodne.cz";
 
     function scrollFun() {
@@ -41,6 +40,7 @@ export default function Kontakt({ kontakt, mainOpacity }) {
 
     useEffect(() => {
         scrollFun()
+        // eslint-disable-next-line
     }, [])
 
     return(
@@ -50,18 +50,22 @@ export default function Kontakt({ kontakt, mainOpacity }) {
             className="scrollMarginTop fullW">
                 <div className="page2 fc">
                     <div className="container fc gap1">
-                        <div className="fc pad1 borderB2">
-                            <h1 className="pad2">Kontakt</h1>
-                            <p>Máte nějaký problém nebo potřebujete poradit? Jsme tu pro vás.</p>
+                        <div className="fcl pad1 borderB2 gap1">
+                            <p 
+                            className={"title2 whiteT"}
+                            onClick={() => kontakt.current.scrollIntoView()}
+                            >Kontakt</p>
+                            <div>
+                                <h1>Máte nějaký problém nebo potřebujete poradit?</h1>
+                                <h1>Jsme tu pro vás.</h1>
+                            </div>
                         </div>
 
                         <div className="serviceCard">
                             <div 
                             className={"fcl " + animClass1} 
                             id="kontaktText"
-                            style={{
-                                //transform: "translateX(-100px)"
-                            }}>
+                            >
                                 <div>
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
                                     <address>

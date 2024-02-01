@@ -24,7 +24,7 @@
 }
 
 h1 {
-  font-size: 35px;
+  font-size: 28px;
   pointer-events: none;
 }
 
@@ -73,6 +73,40 @@ address {
   text-decoration: underline;
 }
 
+.title {
+  border: 2px solid var(--col1);
+  border-radius: 20px;
+  width: fit-content;
+  padding: 7px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 1s;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.title2 {
+  border: 2px solid var(--col2);
+  border-radius: 20px;
+  width: fit-content;
+  padding: 7px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 1s;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.whiteT {
+  background: var(--bg2);
+  color: var(--col2);
+}
+
+.darkT {
+  background: var(--bg1);
+  color: var(--col1);
+}
+
 
 .App {
   display: flex;
@@ -110,6 +144,10 @@ address {
   gap: var(--mb1);
 }
 
+.gap2 {
+  gap: var(--mb2);
+}
+
 .fullW {
   width: 100%;
 }
@@ -141,6 +179,11 @@ address {
 
   .mobileBtn {
     visibility: hidden;
+  }
+
+  h1 {
+    font-size: 35px;
+    pointer-events: none;
   }
 }
 

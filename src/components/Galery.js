@@ -15,15 +15,18 @@ export default function Galery({ galery }) {
     const images = [
         {
             original: car1,
-            originalAlt: "opravy"
+            originalAlt: "opravy",
+            originalWidth: "1000"
           },
           {
             original: car2,
-            originalAlt: "opravy"
+            originalAlt: "opravy",
+            originalWidth: "1000"
           },
           {
             original: car1,
-            originalAlt: "opravy"
+            originalAlt: "opravy",
+            originalWidth: "1000"
           },
     ]
 
@@ -35,18 +38,24 @@ export default function Galery({ galery }) {
             className="scrollMarginTop fullW">
                 <div className="page1 fc">
                     <div className="container fc gap1">
-                        <div className="fc pad1 borderB1">
-                            <h1 className="pad2">Galerie</h1>
-                            <p>Mrkněte na tuto fotogalerii a poznejte naši práci v akci.</p>
+                        <div className="fcl pad1 borderB1 gap1">
+                            <p 
+                            className="title darkT"
+                            onClick={() => galery.current.scrollIntoView()} 
+
+                            >Galerie</p>
+                            <h1 className="pad2">Poznejte naši práci v akci.</h1>
                         </div>
+
                         <ImageGallery 
                         autoPlay={true} 
                         showNav={true} 
                         items={images} 
                         showThumbnails={false} 
                         showBullets={true} 
-                        showFullscreenButton={false}
+                        showFullscreenButton={false} 
                         />
+
                     </div>
                 </div>
             </div>
