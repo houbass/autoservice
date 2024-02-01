@@ -60,7 +60,7 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
         if(thisDiv && mainOpacity === 1) {                                        
             const thisY = thisDiv.getBoundingClientRect().y
 
-            if(thisY < screenHeight - (screenHeight * 0.1)){
+            if(thisY < screenHeight - 50){
                 // show
                 thisClass = "sluzbyAnimShow"
             } else {

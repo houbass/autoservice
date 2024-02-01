@@ -24,7 +24,7 @@
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 28px;
   pointer-events: none;
 }
 
@@ -123,6 +123,10 @@ address {
 
   .mobileBtn {
     visibility: hidden;
+  }
+  h1 {
+    font-size: 40px;
+    pointer-events: none;
   }
 }
 
@@ -264,14 +268,14 @@ address {
   opacity: 1;
   scale: 1;
   transform: translateY(0px);
-  animation: sluzbyAnimationHide 0.5s ease-out forwards;
+  animation: sluzbyAnimationHide 0.4s ease-out forwards;
 }
 
 .sluzbyAnimShow {
   opacity: 0;
   scale: 0.8;
   transform: translateY(50px);
-  animation: sluzbyAnimationShow 0.5s ease-out forwards;
+  animation: sluzbyAnimationShow 0.4s ease-out forwards;
 }
 
 @keyframes sluzbyAnimationShow {
