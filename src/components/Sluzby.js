@@ -22,7 +22,7 @@ export default function Sluzby({main, DiagnosticPic, KlimaPic, SkloPic, Pneuserv
 
     const row2 = [
         {
-            name: "Výměna autoskel",
+            name: "Výměna Autoskel",
             text: "Výměna nebo oprava poškozeného lepeného autoskla",
             pic: SkloPic
         }, 
@@ -33,7 +33,7 @@ export default function Sluzby({main, DiagnosticPic, KlimaPic, SkloPic, Pneuserv
         },
         {
             name: "Příprava na STK",
-            text: "Připravíme vaš vůz na STK.....",
+            text: "Připravíme vaš vůz na STK",
             pic: StkPic
         }
     ];
@@ -51,7 +51,7 @@ export default function Sluzby({main, DiagnosticPic, KlimaPic, SkloPic, Pneuserv
                 }}
                 >
                     <div className="container fc gap1">
-                        <h1>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</h1>
+                        <h1>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek</h1>
                         <div className="serviceCard">
                             {row1.map(e => {
                                 return(

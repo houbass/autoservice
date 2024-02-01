@@ -46,6 +46,14 @@ text {
   align-items: center;
 }
 
+.fcl {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: center;
+  gap: var(--mb2);
+}
+
 .fr {
   display: flex;
   flex-direction: row;
@@ -164,7 +172,7 @@ text {
 }
 
 
-@media screen and (min-width: 550px){
+@media screen and (min-width: 600px){
 
   .introHeight {
     height: 600px;
@@ -393,7 +401,7 @@ text {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: introColor 2s forwards 4s;
+  animation: introColor 2s forwards 2.5s;
 }
 
 @keyframes introColor {

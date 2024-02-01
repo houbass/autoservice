@@ -8,23 +8,31 @@ export default function Kontakt({ kontakt }) {
             className="scrollMarginTop fullW">
                 <div className="page2 fc">
                     <div className="container fc gap1">
-                        <h1 >Kde nás najdete:</h1>
+                        <h1 >Kde nás najdete</h1>
                         <div className="serviceCard">
-                            <div 
+                            <div className="fcl"
                             style={{
-                                textAlign: "left",
+                                //justifyContent: "left"
                             }}>
-                                <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
-                                <p>Horní Bukovina 52, 295 01</p>
+                                <div>
+                                    <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
+                                    <p>Horní Bukovina 52, 295 01</p>
+                                </div>
 
-                                <p style={{fontSize: "17px", fontWeight: "bold"}}>Telefon:</p>
-                                <p>+420 739 821 125</p>
+                                <div>
+                                    <p style={{fontSize: "17px", fontWeight: "bold"}}>Telefon:</p>
+                                    <p>+420 739 821 125</p>
+                                </div>
 
-                                <p style={{fontSize: "17px", fontWeight: "bold"}}>Email:</p>
-                                <p>smrdimikhaar@hodne.cz</p>
+                                <div>
+                                    <p style={{fontSize: "17px", fontWeight: "bold"}}>Email:</p>
+                                    <p>smrdimikhaar@hodne.cz</p>
+                                </div>
 
-                                <p style={{fontSize: "17px", fontWeight: "bold"}}>IČO:</p>
-                                <p>17144965</p>
+                                <div>
+                                    <p style={{fontSize: "17px", fontWeight: "bold"}}>IČO:</p>
+                                    <p>17144965</p>
+                                </div>
                             </div>
                             
                             <iframe 
