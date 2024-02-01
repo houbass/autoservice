@@ -1,6 +1,47 @@
-export default function Kontakt({ kontakt }) {
+import { useState } from "react";
+import { useEffect } from "react";
+
+export default function Kontakt({ kontakt, mainOpacity }) {
+
+    const [animClass1, setAnimClass1] = useState("");
+
 
     const email = "smrdimikhaar@hodne.cz";
+
+    function scrollFun() {
+        // check for screen size
+        const screenHeight = window.innerHeight;
+        const thisDiv = document.getElementById("kontaktText");
+
+        // animate on small screen only
+        let thisClass;
+        
+        if(thisDiv && mainOpacity === 1) {                                        
+            const thisY = thisDiv.getBoundingClientRect().y
+
+            if(thisY < screenHeight - 100){
+                // show
+                thisClass = "kontaktAnimShow"
+            } else {
+                // hide
+                thisClass = "kontaktAnimHidden"
+            }
+
+            setAnimClass1(thisClass);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", scrollFun);
+
+        return() => {
+            window.removeEventListener("scroll", scrollFun);
+        }
+    })
+
+    useEffect(() => {
+        scrollFun()
+    }, [])
 
     return(
         <>
@@ -15,7 +56,12 @@ export default function Kontakt({ kontakt }) {
                         </div>
 
                         <div className="serviceCard">
-                            <div className="fcl">
+                            <div 
+                            className={"fcl " + animClass1} 
+                            id="kontaktText"
+                            style={{
+                                //transform: "translateX(-100px)"
+                            }}>
                                 <div>
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
                                     <address>

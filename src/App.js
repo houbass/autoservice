@@ -101,7 +101,11 @@ function App() {
       mainOpacity={mainOpacity}
       />
 
-      <Kontakt kontakt={kontakt}/>
+      <Kontakt 
+      kontakt={kontakt}
+      mainOpacity={mainOpacity}
+      />
+      
       <Galery galery={galery}/>
       <About about={about}/>
       <Footer />

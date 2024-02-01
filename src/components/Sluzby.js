@@ -54,7 +54,7 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
         const thisDiv = document.getElementById(thisId);
 
         // animate on small screen only
-        let thisClass = "sluzbyAnimDefault"
+        let thisClass;
         
         if(thisDiv && mainOpacity === 1) {                                        
             const thisY = thisDiv.getBoundingClientRect().y
