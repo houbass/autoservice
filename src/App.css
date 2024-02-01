@@ -6,8 +6,9 @@
 :root {
   --bg1: rgb(40, 44, 52);
   --bg2: rgb(245, 245, 245);
+  --navBg: rgb(10,10,10,1);
   --col1: rgb(245, 245, 245);
-  --col2: rgb(40, 44, 52);
+  --col2: rgb(10,10,10,1);
 
   --divPad: 100px;
   --divPadSide: 20px;

@@ -80,6 +80,7 @@ function App() {
       galery={galery} 
       about={about} 
       setIntroAnimClass={setIntroAnimClass}
+      
       />
       <Header 
       header={header} 

@@ -43,7 +43,13 @@ export default function Sluzby({main, DiagnosticPic, KlimaPic, SkloPic, Pneuserv
             <div 
             ref={main}
             className="scrollMarginTop fullW">
-                <div className="page1 fc">
+                <div 
+                className="page1 fc"
+                style={{
+                    opacity: mainOpacity,
+                    transition: "1s"
+                }}
+                >
                     <div className="container fc gap1">
                         <h1>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</h1>
                         <div className="serviceCard">
