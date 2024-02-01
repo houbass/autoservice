@@ -31,6 +31,7 @@ export default function Header({ header, introAnimClass, mainOpacity }) {
     useEffect(() => {
         resizeFun();
     }, [])
+    
 
 
     return(
