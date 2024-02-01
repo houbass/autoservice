@@ -1,6 +1,10 @@
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic, mainOpacity }) {
+
+    const [refresh, setRefresh] = useState(true);
 
     const row1 = [
         {
@@ -38,6 +42,51 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
         }
     ];
 
+
+    // show sluzby decision
+    function showSluzby(e) {
+
+        // check for screen size
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        // create unique ID
+        const thisId = e.name.split("").filter(e => e != " ").join("")
+        const thisDiv = document.getElementById(thisId);
+
+        // animate on small screen only
+        let thisClass = "sluzbyAnimDefault"
+        
+        if(thisDiv && screenWidth <= 600) {                                        
+            const thisY = thisDiv.getBoundingClientRect().y
+
+            if(thisY < screenHeight - (screenHeight * 0.1)){
+                // show
+                thisClass = "sluzbyAnimShow"
+            } else {
+                // hide
+                thisClass = "sluzbyAnimHidden"
+            }
+        }
+
+        return {thisId: thisId, thisClass: thisClass}
+    }
+
+
+    // refresh everytime you scroll
+    function scrollFun() {
+        setRefresh(!refresh)
+    }
+
+    // scroll event listener
+    useEffect(() => {
+        window.addEventListener("scroll", scrollFun)
+
+        return () => {
+            window.removeEventListener("scroll", scrollFun)
+        }
+    })
+
     return(
         <>
             <div 
@@ -50,54 +99,63 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
                     transition: "1s"
                 }}
                 >
+                    
                     <div className="container fc gap1">
                         <h1>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek</h1>
-                        <div className="serviceCard">
-                            {row1.map(e => {
-                                return(
-                                    <div 
-                                    key={e.name}
-                                    className="card"
-                                    onClick={() => kontakt.current.scrollIntoView()}
-                                    >
-                                        <div className="cardTopic">
-                                            <img 
-                                            src={e.pic} 
-                                            alt={e.name}
-                                            width="50px"
-                                            />
-                                        </div>
-                                        <h2>{e.name}</h2>
-                                        <p>{e.text}</p>
-                                    </div>
-                                )
-                            })}
-                        </div>
 
-                        <div 
-                        className="serviceCard"
-                        >
-                            {row2.map(e => {
+                        <div className="sluzby">
+                            <div className="serviceCard">
+                                {row1.map(e => {
+                                    const thisEl = showSluzby(e);
 
-                                return(
-                                    <div 
-                                    key={e.name}
-                                    className="card"
-                                    onClick={() => kontakt.current.scrollIntoView()}
-                                    >
-                                        <div className="cardTopic">
-                                            <img 
-                                            src={e.pic} 
-                                            alt={e.name}
-                                            width="50px"
-                                            />
+                                    return(
+                                        <div 
+                                        id={thisEl.thisId}
+                                        key={e.name}
+                                        className={"card " + thisEl.thisClass}
+                                        onClick={() => kontakt.current.scrollIntoView()}
+                                        >
+                                            <div className="cardTopic">
+                                                <img 
+                                                src={e.pic} 
+                                                alt={e.name}
+                                                width="50px"
+                                                />
+                                            </div>
+                                            <h2>{e.name}</h2>
+                                            <p>{e.text}</p>
                                         </div>
-                
-                                        <h2>{e.name}</h2>
-                                        <p>{e.text}</p>
-                                    </div>
-                                )
-                            })}
+                                    )
+                                })}
+                            </div>
+
+                            <div 
+                            className="serviceCard"
+                            >
+                                {row2.map(e => {
+                                    const thisEl = showSluzby(e);
+
+                                    return(
+                                        <div 
+                                        id={thisEl.thisId}
+                                        key={e.name}
+                                        className={"card " + thisEl.thisClass}
+                                        onClick={() => kontakt.current.scrollIntoView()}
+                                        >
+                                            <div className="cardTopic">
+                                                <img 
+                                                src={e.pic} 
+                                                alt={e.name}
+                                                width="50px"
+                                                />
+                                            </div>
+                    
+                                            <h2>{e.name}</h2>
+                                            <p>{e.text}</p>
+                                        </div>
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>

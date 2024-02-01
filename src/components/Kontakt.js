@@ -1,9 +1,6 @@
-
 export default function Kontakt({ kontakt }) {
 
-    const email = "smrdimikhaar@hodne.cz"
-
-    //<a href="tel:+18881235467">1-888-123-5467</a>.
+    const email = "smrdimikhaar@hodne.cz";
 
     return(
         <>
@@ -14,10 +11,7 @@ export default function Kontakt({ kontakt }) {
                     <div className="container fc gap1">
                         <h1 >Kde nás najdete</h1>
                         <div className="serviceCard">
-                            <div className="fcl"
-                            style={{
-                                //justifyContent: "left"
-                            }}>
+                            <div className="fcl">
                                 <div>
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
                                     <address>
@@ -26,17 +20,17 @@ export default function Kontakt({ kontakt }) {
                                 </div>
 
                                 <a className="phoneLink" href="tel:+420739821125">
-                                <div >
-                                    <p style={{fontSize: "17px", fontWeight: "bold"}}>Telefon:</p>
-                                    <p className="phone">+420 739 821 125</p>
-                                </div>
+                                    <div >
+                                        <p style={{fontSize: "17px", fontWeight: "bold"}}>Telefon:</p>
+                                        <p className="phone">+420 739 821 125</p>
+                                    </div>
                                 </a>
 
                                 <a className="phoneLink" href={"mailto:" + email}>
-                                <div>
-                                    <p style={{fontSize: "17px", fontWeight: "bold"}}>Email:</p>
-                                    <p className="phone">{email}</p>
-                                </div>
+                                    <div>
+                                        <p style={{fontSize: "17px", fontWeight: "bold"}}>Email:</p>
+                                        <p className="phone">{email}</p>
+                                    </div>
                                 </a>
 
                                 <div>
