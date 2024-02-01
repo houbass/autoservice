@@ -42,22 +42,16 @@ export default function Header({ header, introAnimClass, mainOpacity }) {
             paddingTop: "60px",
             opacity: mainOpacity,
             transition: "1s",
-            //background: "orange",
-            //height: "700px"
-
         }}>
             <header>
             <img 
                 className="introHeight"
-                //src={ToolPic} 
                 src="tools.webp"
                 alt="background" 
-                //width={"100%"}
                 style={{
                     width: "100%",
                     objectFit: "cover"
                 }}
-                loading="lazy"
                 />
                 
                 <div 

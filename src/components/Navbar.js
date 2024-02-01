@@ -11,7 +11,7 @@ import geers from "../animations/geers.json"
 import MobileMenu from "./MobileMenu";
 import Menu from "./Menu";
 
-export default function Navbar({ header, main, kontakt, galery, about, setIntroAnimClass }) {
+export default function Navbar({ header, main, kontakt, galery, about, setIntroAnimClass, mainOpacity }) {
 
     const geersRef = useRef();
 
@@ -275,7 +275,8 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
             background: "var(--navBg)",
             width: "100%",
             height: "60px",
-            zIndex: "1",
+            zIndex: "10",
+            opacity: mainOpacity
         }}>
 
             <Lottie 
