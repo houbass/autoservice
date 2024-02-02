@@ -1,26 +1,29 @@
+ 
+
 * {
   padding: 0;
   margin: 0;
 }
 
 :root {
+  /* colors */
   --bg1: rgb(40, 44, 52);
   --bg2: rgb(245, 245, 245);
   --navBg: rgb(20,20,20,1);
   --col1: rgb(245, 245, 245);
   --col2: rgb(10,10,10,1);
 
+  /* sizes */
+  --maxWidth: 1000px;
   --divPad: 100px;
   --divPadSide: 20px;
   --mb1: 50px;
   --mb2: 10px;
 
-  --maxWidth: 1000px;
 
   background-color: var(--bg1);
   color: var(--col1);
   scroll-behavior: smooth;
-
 }
 
 h1 {
@@ -328,7 +331,7 @@ address {
   opacity: 0;
   scale: 0.8;
   transform: translateY(50px);
-  animation: sluzbyAnimationShow 0.4s ease-out forwards;
+  animation: sluzbyAnimationShow 0.7s ease-out forwards;
 }
 
 @keyframes sluzbyAnimationShow {
@@ -367,7 +370,7 @@ address {
 .kontaktAnimShow {
   opacity: 0;
   transform: translateX(-100px);
-  animation: kontaktAnimationShow 0.4s ease-out forwards;
+  animation: kontaktAnimationShow 0.7s ease-out forwards;
 }
 
 @keyframes kontaktAnimationShow {
@@ -393,6 +396,7 @@ address {
 }
 
 
+
 .cardTopic {
   display: flex;
   align-items: center;
@@ -401,6 +405,27 @@ address {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  transform: scaleX(1);
+}
+
+
+
+.card:hover .cardTopic {
+  transform: scaleX(1);
+  animation: rotateAnim 0.5s ease-in;
+}
+
+@keyframes rotateAnim {
+  0%{
+    transform: scaleX(1);
+  }
+  50%{
+    transform: scaleX(-1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+  
 }
 
 .scrollMarginTop {
