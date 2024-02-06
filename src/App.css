@@ -15,7 +15,7 @@
 
   /* sizes */
   --maxWidth: 1000px;
-  --divPad: 100px;
+  --divPad: 150px;
   --divPadSide: 20px;
   --mb1: 50px;
   --mb2: 10px;
@@ -53,8 +53,17 @@ address {
   padding-bottom: var(--mb2);
 }
 
+.pad2Top {
+  padding-top: var(--mb2);
+}
+
 .borderB1 {
   border-bottom: 1px solid rgba(245,245,245,0.5);               
+  width: 100%
+}
+
+.borderB1Top {
+  border-Top: 1px solid rgba(245,245,245,0.5);               
   width: 100%
 }
 
@@ -143,12 +152,23 @@ address {
   flex-direction: row;
 }
 
+.frc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 .gap1 {
   gap: var(--mb1);
 }
 
 .gap2 {
   gap: var(--mb2);
+}
+
+.gap3 {
+  gap: 3px;
 }
 
 .fullW {
@@ -522,7 +542,7 @@ address {
 
 .introUnderlineDefault {
   width: 0%;
-  height: 8px;
+  height: 4px;
   border-radius: 4px;
   background: rgb(245, 245, 245);
   margin-top: -7px;
@@ -531,7 +551,7 @@ address {
 
 .introUnderline {
   width: 0%;
-  height: 5px;
+  height: 4px;
   border-radius: 2.5px;
   background: rgb(245, 245, 245);
   margin-top: -7px;
@@ -553,7 +573,7 @@ address {
 @media screen and (min-width: 500px){
   .introUnderline {
     width: 0%;
-    height: 8px;
+    height: 4px;
     border-radius: 4px;
     background: rgb(245, 245, 245);
     margin-top: -7px;

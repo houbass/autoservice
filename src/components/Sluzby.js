@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
+// pic
+import motulImg from "../pictures/motul.svg";
+import certificateImg from "../pictures/certificate.svg";
 
 export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic, PneuservisPic, AutoservisPic, StkPic, mainOpacity}) {
 
@@ -9,12 +12,12 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
     const row1 = [
         {
             name: "Autoservis",
-            text: "Kompletní autoservis, výměna olejů a filtrů, brzd, tlumičů, rozvodových řemenů a řetězů, spojek, opravy motorů.",
+            text: "Kompletní servis od A do Z s individuálním přístupem k zákazníkovi.",
             pic: AutoservisPic
         }, 
         {
             name: "Pneuservis",
-            text: "Kompletní pneuservis, přezutí, vyvážení, opravy defektů pneumatik.",
+            text: "Montáž a demontáž pneumatik, včetně vyvážení disků. Opravy defektů. Prodej pneumatik a disků.",
             pic: PneuservisPic
         },
         {
@@ -26,18 +29,18 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
 
     const row2 = [
         {
-            name: "Výměna Autoskel",
-            text: "Výměna nebo oprava poškozeného lepeného autoskla.",
+            name: "Autoskla",
+            text: "Výměna poškozených autoskel za nové.",
             pic: SkloPic
         }, 
         {
             name: "Diagnostika",
-            text: "Diagnostika Vašeho vozu profesionálním dignostickým přístrojem, čtení chybových kódů, regenerace DPF, reset servisních intervalů.",
+            text: "Diagnostika Vašeho vozu profesionálním dignostickým přístrojem, reset servisních intervalů.",
             pic: DiagnosticPic
         },
         {
-            name: "Příprava na STK",
-            text: "Připravíme vaš vůz na STK.",
+            name: "STK",
+            text: "Příprava a zajištění STK.",
             pic: StkPic
         }
     ];
@@ -98,17 +101,17 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
                 >
                     
                     <div className="container fc gap1">
-                        <div className="fcl pad1 borderB1 gap1">
+                        <div className="fcl pad2 borderB1 gap1">
                             <p 
                             className={"title darkT"}
                             onClick={() => main.current.scrollIntoView()}
                             >Služby</p>
-                            <h1>Nabízíme kompletní opravy a údržby osobních motorových vozidel všech značek.</h1>
+                            <h1>Nabízím kompletní servis osobních a užitkových motorových vozidel všech značek.</h1>
                             
                         </div>
 
-                        <div className="sluzby">
-                            <div className="serviceCard">
+                        <div className="sluzby ">
+                            <div className="serviceCard ">
                                 {row1.map(e => {
                                     const thisEl = showSluzby(e);
 
@@ -160,6 +163,41 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
                                     )
                                 })}
                             </div>
+                        </div>
+                        <div className="borderB1Top" 
+                        style={{
+
+                        }}
+                        >
+                            <div className="frc pad2Top gap3">
+                                <img className="" src={certificateImg} alt="official" height={40}></img>
+
+                                <div 
+                                style={{
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    justifyContent: "left",
+                                    alignItems: "start",
+                                    width: "200px",
+
+                                }}
+                                >
+                                    <img src={motulImg} height={40} alt="Motul oil"></img>
+                                    <p 
+                                    style={{
+                                        opacity: 0.8,
+                                        fontSize: "10.5px",
+                                        fontWeight: ""
+                                    }}>Oficiální prodejce olejů Motul</p>
+                                    <p 
+                                    style={{
+                                        opacity: 0.8,
+                                        fontSize: "12px"
+                                    }}></p>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>

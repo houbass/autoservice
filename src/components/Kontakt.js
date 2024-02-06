@@ -5,7 +5,7 @@ export default function Kontakt({ kontakt, mainOpacity }) {
 
     const [animClass1, setAnimClass1] = useState("");
 
-    const email = "smrdimikhaar@hodne.cz";
+    const email = "laubik10@seznam.cz";
 
     function scrollFun() {
         // check for screen size
@@ -50,14 +50,13 @@ export default function Kontakt({ kontakt, mainOpacity }) {
             className="scrollMarginTop fullW">
                 <div className="page2 fc">
                     <div className="container fc gap1">
-                        <div className="fcl pad1 borderB2 gap1">
+                        <div className="fcl pad2 borderB2 gap1">
                             <p 
                             className={"title2 whiteT"}
                             onClick={() => kontakt.current.scrollIntoView()}
                             >Kontakt</p>
                             <div>
                                 <h1>Máte nějaký problém nebo potřebujete poradit?</h1>
-                                <h1>Jsme tu pro vás.</h1>
                             </div>
                         </div>
 

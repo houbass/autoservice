@@ -69,6 +69,9 @@ function App() {
     }
   }, [allImagesLoaded])
 
+  /* <About about={about}/> */
+  /* <Footer /> */
+
   
   return (
     <div 
@@ -107,8 +110,8 @@ function App() {
       />
       
       <Galery galery={galery}/>
-      <About about={about}/>
-      <Footer />
+
+
     </div>
   );
 }

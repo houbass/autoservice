@@ -36,10 +36,10 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
             name: "Galerie",
             ref: galery.current
         },
-        {
+      /*  {
             name: "O Mně",
             ref: about.current
-        },
+        }, */
     ]
 
     //INTRO ANIMATION AGAIN
@@ -97,15 +97,15 @@ export default function Navbar({ header, main, kontakt, galery, about, setIntroA
         ) {
             setSelections(["0%", "100%", "0%", "0%"]);
         } else if(
-            galery.current.getBoundingClientRect().y < screen &&
-            about.current.getBoundingClientRect().y > screen2
+            galery.current.getBoundingClientRect().y < screen 
+           //&& about.current.getBoundingClientRect().y > screen2
         ) {
             setSelections(["0%", "0%", "100%", "0%"]);
-        } else if(
+        } /*else if(
             about.current.getBoundingClientRect().y < screen2
         ) {
             setSelections(["0%", "0%", "0%", "100%"]);
-        }else{
+        } */else{
             setSelections(["0%", "0%", "0%", "0%"]);
         }
 
