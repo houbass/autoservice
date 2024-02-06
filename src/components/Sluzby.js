@@ -35,7 +35,7 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
         }, 
         {
             name: "Diagnostika",
-            text: "Diagnostika Vašeho vozu profesionálním dignostickým přístrojem, reset servisních intervalů.",
+            text: "Diagnostika vašeho vozu profesionálním dignostickým přístrojem, reset servisních intervalů.",
             pic: DiagnosticPic
         },
         {
