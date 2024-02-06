@@ -170,30 +170,23 @@ export default function Sluzby({main, kontakt, DiagnosticPic, KlimaPic, SkloPic,
                         }}
                         >
                             <div className="frc pad2Top gap3">
-                                <img className="" src={certificateImg} alt="official" height={40}></img>
+                                <img src={certificateImg} alt="official" height={35}></img>
 
                                 <div 
                                 style={{
                                     display: "flex",
                                     flexDirection: "column",
                                     justifyContent: "left",
-                                    alignItems: "start",
-                                    width: "200px",
-
+                                    alignItems: "start"
                                 }}
                                 >
-                                    <img src={motulImg} height={40} alt="Motul oil"></img>
+                                    <img src={motulImg} height={30} alt="Motul oil"></img>
                                     <p 
                                     style={{
                                         opacity: 0.8,
-                                        fontSize: "10.5px",
+                                        fontSize: "8px",
                                         fontWeight: ""
                                     }}>Oficiální prodejce olejů Motul</p>
-                                    <p 
-                                    style={{
-                                        opacity: 0.8,
-                                        fontSize: "12px"
-                                    }}></p>
                                 </div>
                             </div>
 

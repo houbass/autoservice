@@ -5,7 +5,7 @@ export default function Kontakt({ kontakt, mainOpacity }) {
 
     const [animClass1, setAnimClass1] = useState("");
 
-    const email = "laubik10@seznam.cz";
+    const email = "autoservislaube@seznam.cz";
 
     function scrollFun() {
         // check for screen size
