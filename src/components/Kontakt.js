@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useEffect } from "react";
 
+import MyMap from "./MyMap";
+
 export default function Kontakt({ kontakt, mainOpacity }) {
 
     const [animClass1, setAnimClass1] = useState("");
@@ -60,10 +62,14 @@ export default function Kontakt({ kontakt, mainOpacity }) {
                             </div>
                         </div>
 
-                        <div className="serviceCard">
+                        <div 
+                        className="serviceCard" 
+                        style={{width: "100%"}}
+                        >
+                
                             <div 
                             className={"fcl " + animClass1} 
-                            id="kontaktText"
+                            id="kontaktText" 
                             >
                                 <div>
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
@@ -92,16 +98,8 @@ export default function Kontakt({ kontakt, mainOpacity }) {
                                 </div>
                             </div>
                             
-                            <iframe 
-                            className="map" 
-                            title="map"
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10142.292765101642!2d14.929176808036887!3d50.54210975805526!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470951f9bf2e6521%3A0x1aa775c8cccf01a5!2sAutoservis%20-%20Laube!5e0!3m2!1scs!2scz!4v1704545667585!5m2!1scs!2scz" 
-                            height="250" 
-                            allowFullScreen="" 
-                            loading="lazy" 
-                            referrerPolicy="no-referrer-when-downgrade" 
-                            >
-                            </iframe>     
+                            <MyMap />  
+
                         </div>
                     </div>
                 </div>
