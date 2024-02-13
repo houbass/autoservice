@@ -657,3 +657,81 @@ address {
 }
 
 
+
+/* GOOGLE MAPS*/
+
+.mapsContainer {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showInMapsButton {
+  position: absolute;
+  margin-top: 90px;
+  background: var(--col1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.showInMapsButton a {
+  text-decoration: none;
+}
+
+.showInMapsButton p {
+  font-weight: 500;
+  color: var(--col2);
+  text-decoration: underline;
+}
+
+
+
+.showInMapsDefault {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.showInMapsShow {
+  opacity: 0;
+  visibility: hidden;
+  animation: showInMapsShowAnim 0.5s forwards;
+}
+
+@keyframes showInMapsShowAnim {
+  0%{
+    visibility: hidden;
+    opacity: 0;
+  }
+  5%{
+    visibility: visible;
+    opacity: 0;
+  }
+  100%{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.showInMapsHide {
+  opacity: 1;
+  visibility: visible;
+  animation: showInMapsHideAnim 0.5s forwards;
+}
+
+@keyframes showInMapsHideAnim {
+  0%{
+    visibility: visible;
+    opacity: 1;
+  }
+  95%{
+    visibility: visible;
+    opacity: 0;
+  }
+  100%{
+    visibility: hidden;
+    opacity: 0;
+  }
+}

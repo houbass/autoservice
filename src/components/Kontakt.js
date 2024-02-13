@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-import MyMap from "./MyMap";
+// COMPONENTS
+import GoogleMaps from "./GoogleMaps";
 
 export default function Kontakt({ kontakt, mainOpacity }) {
 
@@ -71,6 +71,16 @@ export default function Kontakt({ kontakt, mainOpacity }) {
                             className={"fcl " + animClass1} 
                             id="kontaktText" 
                             >
+
+                                <div>
+                                    <p style={{fontSize: "17px", fontWeight: "bold"}}>Pracovní doba:</p>
+
+                                        <div className="fr gap2">
+                                            <p>Po-Čt <strong style={{fontWeight: "600"}}>8-16</strong></p>
+                                            <p>Pá <strong style={{fontWeight: "600"}}>8-14</strong></p>
+                                        </div>
+                                </div>
+
                                 <div>
                                     <p style={{fontSize: "17px", fontWeight: "bold"}}>Adresa:</p>
                                     <address>
@@ -97,8 +107,9 @@ export default function Kontakt({ kontakt, mainOpacity }) {
                                     <p>17144965</p>
                                 </div>
                             </div>
-                            
-                            <MyMap />  
+                        
+
+                            <GoogleMaps />
 
                         </div>
                     </div>
